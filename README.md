@@ -2,7 +2,7 @@
 
 > **Growify Digital LLP · AI Generalist Assessment Submission**  
 > **Candidate:** Tanmay Tomar  
-> **Live Production:** [growify-assessment.vercel.app](https://growify-assessment.vercel.app) *(or your Vercel URL)*  
+> **Live Production:** [growify-assessment.vercel.app](https://growify-assessment.vercel.app) 
 > **Repository:** [github.com/TANMaYtO/Growify-assessment](https://github.com/TANMaYtO/Growify-assessment)  
 > **Video Walkthrough (Loom):** [Watch the Product Showcase](https://www.loom.com) *(Insert your Loom link)*  
 
