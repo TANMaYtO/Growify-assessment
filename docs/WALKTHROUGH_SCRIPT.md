@@ -1,96 +1,131 @@
-# Growify 4:30 Walkthrough Demonstration Script (WALKTHROUGH_SCRIPT.md)
+# Growify Master Walkthrough & Video Demonstration Script (Updated)
 
-**Assessment:** AI Generalist Submission  
+**Assessment:** Growify AI Generalist Submission  
 **Candidate:** Tanmay Tomar  
 **Target Duration:** Exactly 4 minutes 30 seconds  
-**Resolution:** 1080p / 60fps (Desktop) + Mobile Viewport Emulation  
+**Format:** 1080p / 60fps (Desktop) + Mobile Viewport Emulation  
+**Production Stack:** Next.js 15.5.28 · React 19 · Tailwind CSS v4 · TypeScript (Strict) · 41 Prerendered Static Routes  
+**Design Standard:** Haute Couture Architectural System (#FAF8F5 Alabaster Linen, #0E0D0C Obsidian, #9E7D47 Antique Gold)
 
 ---
 
 ## TIMECODE BREAKDOWN & CHOREOGRAPHY
 
 ```
-0:00 ─── [01. Strategic Audit & Thesis] ─── 0:45
-0:45 ─── [02. Desktop Flagship & S.C.A.L.E.] ─── 2:00
-2:00 ─── [03. Lookify VTO & Tech Ecosystem] ─── 3:00
-3:00 ─── [04. Review Mode & Analytics Debug] ─── 3:45
-3:45 ─── [05. Office Tour & Architectural Walkthrough] ─── 4:30
+0:00 ─── [ACT 1: Strategic Audit & Brand Positioning] ──────── 0:45
+0:45 ─── [ACT 2: Living Flagship, Marquees & "Our Plan"] ───── 1:45
+1:45 ─── [ACT 3: S.C.A.L.E. Operating System & Commissions] ── 2:30
+2:30 ─── [ACT 4: Lookify Neural Try-On & Laser Draping] ────── 3:15
+3:15 ─── [ACT 5: Review Mode, Ledger & Telemetry Debugger] ─── 3:55
+3:55 ─── [ACT 6: Studio Walkthrough & Technical Wrap] ──────── 4:30
 ```
 
 ---
 
-### ACT 1: STRATEGIC AUDIT OF LIVE SITE DEFECTS & POSITIONING THESIS
+### ACT 1: STRATEGIC AUDIT & BRAND POSITIONING
 **Time:** 0:00 – 0:45 (45 Seconds)  
-**Visual on Screen:** Split screen showing live `growify.in` on the left vs the new Next.js prototype on the right. Highlight the consumer cart drawer on the live site, duplicate scripts, and broken copy.
+**Visual on Screen:** 
+- Start with a quick 3-second comparison: show the live `growify.in` on Shopify with its consumer shopping cart drawer, duplicate scripts, and agency fluff.
+- Cut cleanly to the new Next.js 15.5.28 digital flagship homepage.
+- Move the cursor to demonstrate the bespoke **Custom Cursor** with inertia physics, the dynamic hairline scroll progress at the top, and the **Section Nav Rail** on the right.
 
 > **VOICEOVER:**  
 > "Hi Rishab and the Growify leadership team. This is Tanmay Tomar.  
 > 
-> When I examined the live Growify website, I found an existential positioning gap: Growify has scaled marquee couture brands like Tarun Tahiliani, Gaurav Gupta, and House of Masaba to over ₹500 Crores in GMV. Yet your website was running on a retail e-commerce Shopify theme with consumer cart drawers, duplicate scripts, and outdated agency jargon.  
+> When I analyzed Growify’s online presence, I identified an existential contradiction: Growify has powered India's most prestigious luxury houses—Tarun Tahiliani, Gaurav Gupta, and House of Masaba—scaling e-commerce revenues past ₹500 Crores.  
 > 
-> For a luxury couture founder evaluating an enterprise growth partner, that template destroyed credibility before the first meeting.  
+> Yet your live website was running on a generic Shopify retail theme, featuring retail cart drawers, duplicate scripts, and template agency styling. For a luxury founder evaluating an enterprise growth partner, that template degraded trust before the first conversation.  
 > 
-> My response was not a cosmetic redesign. I engineered a production-grade digital flagship built on Next.js 15, React 19, and Tailwind CSS v4, anchored in the 'Patternwork' design system and Growify's true philosophy: *We grow when you grow*."
+> Rather than a superficial cosmetic facelift, I engineered an architectural digital flagship built from scratch on Next.js 15.5, React 19, and Tailwind v4. It is anchored in bespoke Haute Couture aesthetics—Alabaster Linen, Architectural Obsidian, and Warm Antique Gold—with zero AI gradients and zero retail fluff."
 
 ---
 
-### ACT 2: DESKTOP FLAGSHIP, S.C.A.L.E. EXPLORER & VERIFIED CASE PROOF
-**Time:** 0:45 – 2:00 (75 Seconds)  
-**Visual on Screen:** Smooth scroll down homepage. Hover over verified proof strip markers. Interact with the 5 tabs of S.C.A.L.E. Toggle the 'AI Layer' switch. Click through to `/services/shopify-development`, then navigate to `/work/tarun-tahiliani`.
+### ACT 2: THE LIVING FLAGSHIP, DUAL RUNNING MARQUEES & "OUR PLAN"
+**Time:** 0:45 – 1:45 (60 Seconds)  
+**Visual on Screen:** 
+- Scroll smoothly through the Hero fold.
+- Show the **Dual Infinite Running Marquees**: the Antique Gold discipline ribbon and Obsidian client couture counter-flow.
+- Scroll to the animated numbers in the **Proof Strip** counting up smoothly from 0 to 2019, 421+, and 7,000 sq ft.
+- Interact with the **OUR PLAN** expandable accordion cards (`01 SETUP`, `02 SHOW`, `03 START`, `04 SCALE`, `05 SUPPORT`). Hover across cards to showcase the horizontal flex expansion (`flex-[3.2]`), sliding numerals, and capability tags.
 
 > **VOICEOVER:**  
-> "On the homepage, you immediately notice architectural restraint: the bespoke Haute Couture palette in Warm Alabaster Linen, Architectural Obsidian, and Warm Antique Gold.  
+> "As we glide through the flagship, every interaction responds with physical weight and luxury fluidity.  
 > 
-> Notice our interactive S.C.A.L.E. Operating System explorer. We've synchronized Growify's six practices across Setup, Capture, Activate, Lead, and Establish. With one click, founders can toggle the 'AI Intelligence Layer' to see exactly where proprietary machine learning models accelerate each phase.  
+> Notice our dual infinite running marquees: an Antique Gold ribbon streaming core disciplines, paired with an Architectural Obsidian counter-flow highlighting your iconic client portfolio.  
 > 
-> Clicking into our flagship Shopify practice, we present an unassailable architectural narrative: multi-warehouse ERP inventory synchronization, international geo-currency routing, and sub-second mobile page loads.  
+> In the Proof Strip, every verified metric counts up dynamically into the viewport.  
 > 
-> In our Tarun Tahiliani case study, every metric is traceable: scaling End-of-Season sales upwards of 200% on a 50% ad spend increase, handling a 4x monthly surge in January 2023, and executing a zero-loss migration from legacy Magento."
+> Directly below is our recreation of Growify's signature operational philosophy: *If you have ideas for your business, we have the right plan.* These five expandable cards—Setup, Show, Start, Scale, and Support—expand with smooth cubic-bezier easing, revealing deep service blueprints without cluttering the page."
 
 ---
 
-### ACT 3: PROPRIETARY IP SHOWCASE (LOOKIFY VTO) & ECOSYSTEM
-**Time:** 2:00 – 3:00 (60 Seconds)  
-**Visual on Screen:** Navigate to `/technology/lookify`. Scroll to the Interactive Concept Simulator. Select 'Zardozi Embroidered Bridal Lehenga', select 'Model Silhouette A', and click 'Run Neural Draping Inference'. Watch the 2.74s state progression. Scroll down to the Partner Matrix at `/technology/partners`.
+### ACT 3: S.C.A.L.E. OPERATING SYSTEM & VERIFIED CASE PROOF
+**Time:** 1:45 – 2:30 (45 Seconds)  
+**Visual on Screen:** 
+- Scroll into the **S.C.A.L.E. Explorer**. Click through Setup, Capture, Activate, Lead, and Establish.
+- Toggle the **AI Intelligence Layer** switch on and off to show the ML model mapping.
+- Scroll down through self-drawing seam dividers into **Selected Commercial Engagements**.
+- Hover over the Tarun Tahiliani, Mahima Mahajan, and House of Masaba cards showing 3D perspective tilt and ParallaxImage depth. Click through to `/work/tarun-tahiliani`.
 
 > **VOICEOVER:**  
-> "Growify is not just a growth agency—it is a proprietary technology company.  
+> "Next, our interactive S.C.A.L.E. Explorer translates Growify's end-to-end agency methodology into a tangible operating system. With one click, founders can toggle the 'AI Intelligence Layer' to inspect exactly which proprietary models accelerate each phase.  
 > 
-> Here on the Lookify flagship page, we solve the single biggest conversion blocker in luxury fashion: silhouette and draping uncertainty.  
-> 
-> Let's test our live concept simulator: I select a heavy zardozi embroidered bridal lehenga, choose a customer body profile, and trigger neural draping. Lookify calculates 24-point landmark vectors, simulates fabric weight and tension falloff, and renders the fitted garment in under 3.2 seconds directly in the browser—with zero app install and a strict DPDP Act ephemeral zero-storage privacy policy.  
-> 
-> In our Partner Matrix, we have categorized every technology by customer value, correctly citing Growify's official Meta Managed Agency designation, and fixing the live site's copy-paste bug on Razorpay."
+> Entering the commercial commissions gallery, each case study features 3D perspective card physics, masked parallax depth, and verifiable growth metrics:  
+> Scaling Tarun Tahiliani End-of-Season sales by 200%+ on a 50% spend increase, managing 4x surge volumes, and executing an immaculate Magento-to-Shopify Plus migration with zero inventory downtime."
 
 ---
 
-### ACT 4: REVIEW MODE & LIVE TELEMETRY DEBUGGER
-**Time:** 3:00 – 3:45 (45 Seconds)  
-**Visual on Screen:** Open `/review` or toggle Review Mode in footer. Hover over the metric cards on `/work/mahima-mahajan`. Show the verification source and status `[V]`, `[S]`, and `[U]`. Show live dataLayer event payloads in console or diagnostic drawer.
+### ACT 4: PROPRIETARY IP (LOOKIFY VTO) & LASER SCANLINE SIMULATOR
+**Time:** 2:30 – 3:15 (45 Seconds)  
+**Visual on Screen:** 
+- Navigate to `/technology/lookify` or scroll to the Lookify engine on the homepage.
+- Select the 'Zardozi Hand-Embroidered Bridal Lehenga' or 'Heritage Bandhgala Velvet Sherwani'.
+- Click **Run Neural Draping Inference**.
+- Demonstrate the **Animated Laser Scanline** sweeping vertically down the mannequin, the pulsing fiducial keypoint rings on the 24-point mesh, and the interactive split before/after comparison slider.
 
 > **VOICEOVER:**  
-> "Now for our killer differentiator: Review Mode and the Validation Ledger.  
+> "Growify is not just a growth partner—it is a proprietary technology company.  
 > 
-> In strict accordance with your brief, zero metrics are manufactured. Every figure is mapped to our typed single source of truth in `facts.ts`. Verified public metrics display verified badges; supplied deck metrics display deck tags.  
+> Here on the Lookify flagship, we solve luxury e-commerce’s biggest barrier: garment silhouette and draping uncertainty.  
 > 
-> Notice how we handled the Mahima Mahajan '251%' metric from Slide 17 of your deck: because a revenue share cannot mathematically exceed 100%, we quarantined it under 'Pending Validation' and logged the discrepancy in our public `/review` ledger, identifying it as a likely conflation with international sales growth.  
-> 
-> Our structured dataLayer pushes standard GA4 snake_case events on every CTA interaction."
+> In our live concept simulator, I select a heavy zardozi bridal lehenga, choose a shopper silhouette, and run neural draping. A warm gold laser beam sweeps across the frame while the engine aligns 24 anatomical keypoints, calculates cloth tension falloff, and converges the draped silhouette in 2.74 seconds—accelerated via edge WebGL with zero app download and zero-storage DPDP compliance."
 
 ---
 
-### ACT 5: BONUS OFFICE WALKTHROUGH & ARCHITECTURAL EXPERIENCE
-**Time:** 3:45 – 4:30 (45 Seconds)  
-**Visual on Screen:** Navigate to `/life-at-growify`. Play the video walkthrough of Growify's 7,000 sq ft New Delhi studio campus. Click through the 6 quick-jump studio zones (The Grand Reception, The Main Engineering Floor, The Executive Strategy Suite, High-Velocity Pod, Lookify AI Lab, and Studio Commons). Toggle fullscreen and timeline scrubbing.
+### ACT 5: REVIEW MODE, DATA VALIDATION LEDGER & TELEMETRY
+**Time:** 3:15 – 3:55 (40 Seconds)  
+**Visual on Screen:** 
+- Open `/review` or toggle **Audit & Review Mode** from the bottom toolbar.
+- Point out the claim markers: `[V]` for verified public data, `[S]` for pitch deck figures.
+- Highlight the **Mahima Mahajan 251% Quarantine**: explain the discrepancy.
+- Open the **dataLayer Telemetry Drawer** and trigger a button click to show real-time snake_case event dispatching.
 
 > **VOICEOVER:**  
-> "Finally, the bonus challenge: an interactive walkthrough of Growify's 7,000 sq ft New Delhi studio campus.  
+> "Now for the cornerstone of our engineering rigor: Review Mode and the Validation Ledger.  
 > 
-> Structured into six distinct architectural zones—from the executive client reception gallery to the 35+ engineer main floor and the Lookify computer vision lab—founders can take a seamless virtual tour of the headquarters where their digital flagships are built.  
+> Every single metric on this site is bound to a strongly typed single source of truth in `facts.ts`. We do not manufacture claims. Verified data carries clear audit badges.  
 > 
-> Every department is paired with authenticated operational highlights and instant zone-jumping navigation.  
+> Look at how we handled the Mahima Mahajan '251%' figure from Slide 17 of your growth deck: because revenue share cannot mathematically exceed 100%, we quarantined it under 'Pending Validation' and logged the discrepancy in our public `/review` ledger, noting it as a probable conflation with international sales growth.  
 > 
-> The entire codebase is fully typed, 100% verified across 41 static routes, and ready for immediate deployment. Thank you, and I look forward to building with Growify."
+> Concurrently, our structured dataLayer telemetry streams real-time GA4 events on every interaction."
 
 ---
-*(End of Script · Ready for Screen Recording)*
+
+### ACT 6: ATELIER CAMPUS TOUR & TECHNICAL SUMMARY
+**Time:** 3:55 – 4:30 (35 Seconds)  
+**Visual on Screen:** 
+- Navigate to `/life-at-growify`.
+- Show the high-definition studio walkthrough video. Click through the quick-jump zones: *The Grand Reception*, *The Main Engineering Floor*, *Executive Strategy Suite*, and *Lookify AI Lab*.
+- Show terminal or build summary badge: Next.js 15.5.28, 41 static pre-rendered routes, 0 TypeScript errors.
+
+> **VOICEOVER:**  
+> "Finally, the bonus challenge: a virtual architectural tour of Growify's 7,000 square foot New Delhi studio campus.  
+> 
+> Prospective clients can navigate through six distinct operational zones—from the grand reception gallery to the 35+ engineer floor and the Lookify computer vision lab.  
+> 
+> The entire platform is deployed live on Vercel, compiled into 41 static pre-rendered pages on Next.js 15.5, with 100% strict TypeScript typing and zero security advisories.  
+> 
+> Thank you, and I look forward to engineering the future of luxury commerce with Growify."
+
+---
+*(End of 4:30 Walkthrough Recording)*
