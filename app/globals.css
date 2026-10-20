@@ -81,6 +81,78 @@
   animation: seamDraw 1.2s ease-out forwards;
 }
 
+/* Editorial Scroll-Driven Motion System */
+@keyframes editorialLift {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorialScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hairlineExpand {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* CSS Scroll-Driven Animations for modern browser compositors */
+@supports (animation-timeline: view()) {
+  .scroll-driven-lift {
+    animation: editorialLift 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  .scroll-driven-scale {
+    animation: editorialScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  .scroll-driven-hairline {
+    transform-origin: left;
+    animation: hairlineExpand 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 25%;
+  }
+}
+
+/* Fallback classes for IntersectionObserver integration */
+.scroll-reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
 /* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 6px;

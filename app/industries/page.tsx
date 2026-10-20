@@ -5,6 +5,7 @@ import { industries } from "@/content/facts";
 import type { IndustryVertical } from "@/content/facts";
 import { ArrowRight, Sparkles, CheckCircle2, ChevronRight, Gem, Shirt, Home, Zap } from "lucide-react";
 import { SeamDivider } from "@/components/ui/SeamDivider";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Industries & Luxury Commerce Verticals | Growify",
@@ -36,9 +37,7 @@ export default function IndustriesPage(): React.JSX.Element {
   return (
     <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
       {/* Top Hero */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#6B3BA6]/20 rounded-full blur-3xl pointer-events-none" />
-
+      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-[#D9D2C5]/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -78,77 +77,76 @@ export default function IndustriesPage(): React.JSX.Element {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {industryList.map((ind: IndustryVertical) => (
-            <div
-              key={ind.slug}
-              className="bg-white border border-[#D9D2C5] rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-[#6B3BA6] space-y-6"
-            >
-              <div className="space-y-4">
-                {/* Vertical Visual Showcase Banner */}
-                <div className="relative aspect-16/9 rounded-xl overflow-hidden border border-[#D9D2C5]/70 bg-black/10">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={industryImages[ind.slug] || "/images/hero/luxury_atelier.jpg"}
-                    alt={ind.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#17102A]/85 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute top-3 left-3 w-9 h-9 rounded-lg bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                    {iconMap[ind.slug] || <Sparkles className="w-4 h-4 text-[#6B3BA6]" />}
+          {industryList.map((ind: IndustryVertical, index: number) => (
+            <ScrollReveal key={ind.slug} animation="fade-up" delay={index * 120}>
+              <div className="bg-white border border-[#D9D2C5] rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-[#6B3BA6] space-y-6 h-full">
+                <div className="space-y-4">
+                  {/* Vertical Visual Showcase Banner */}
+                  <div className="relative aspect-16/9 rounded-xl overflow-hidden border border-[#D9D2C5]/70 bg-black/10">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={industryImages[ind.slug] || "/images/hero/luxury_atelier.jpg"}
+                      alt={ind.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+                    <div className="absolute top-3 left-3 w-9 h-9 rounded-lg bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                      {iconMap[ind.slug] || <Sparkles className="w-4 h-4 text-[#6B3BA6]" />}
+                    </div>
+                    <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs font-mono">
+                      <span className="font-serif italic drop-shadow-sm">{ind.name}</span>
+                      <span className="px-2 py-0.5 rounded bg-white/20 backdrop-blur-xs text-[10px] text-white">
+                        Practice Playbook
+                      </span>
+                    </div>
                   </div>
-                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs font-mono">
-                    <span className="font-serif italic drop-shadow-sm">{ind.name}</span>
-                    <span className="px-2 py-0.5 rounded bg-white/20 backdrop-blur-xs text-[10px] text-white">
-                      Practice Playbook
+
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono text-[#6B3BA6] uppercase tracking-widest font-medium">
+                      Commerce Vertical
+                    </span>
+                    <span className="text-xs font-mono text-[#17102A]/50">
+                      Proven Architecture
                     </span>
                   </div>
+
+                  <h3 className="font-serif text-2xl font-light text-[#17102A] group-hover:text-[#6B3BA6] transition-colors">
+                    {ind.name}
+                  </h3>
+
+                  <p className="text-sm text-[#17102A]/75 leading-relaxed font-sans">
+                    {ind.shortSummary}
+                  </p>
+
+                  {/* Key Metrics Strip */}
+                  <div className="grid grid-cols-3 gap-2 pt-2 border-t border-[#D9D2C5]/50">
+                    {ind.keyMetrics.map((km, idx) => (
+                      <div key={idx} className="p-2.5 rounded-lg bg-[#F5F1EA]/60 border border-[#D9D2C5]/70">
+                        <div className="font-serif text-lg font-medium text-[#17102A]">{km.value}</div>
+                        <div className="text-[10px] text-[#17102A]/60 font-mono mt-0.5 line-clamp-1">{km.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Client Brands */}
+                  <div className="pt-2 text-xs font-mono text-[#17102A]/70">
+                    <span className="text-[#6B3BA6] font-medium">Proven With:</span>{" "}
+                    {ind.featuredBrands.join(" • ")}
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-[#6B3BA6] uppercase tracking-widest font-medium">
-                    Commerce Vertical
-                  </span>
-                  <span className="text-xs font-mono text-[#17102A]/50">
-                    Proven Architecture
-                  </span>
-                </div>
-
-                <h3 className="font-serif text-2xl font-light text-[#17102A] group-hover:text-[#6B3BA6] transition-colors">
-                  {ind.name}
-                </h3>
-
-                <p className="text-sm text-[#17102A]/75 leading-relaxed font-sans">
-                  {ind.shortSummary}
-                </p>
-
-                {/* Key Metrics Strip */}
-                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-[#D9D2C5]/50">
-                  {ind.keyMetrics.map((km, idx) => (
-                    <div key={idx} className="p-2.5 rounded-lg bg-[#F5F1EA]/60 border border-[#D9D2C5]/70">
-                      <div className="font-serif text-lg font-medium text-[#17102A]">{km.value}</div>
-                      <div className="text-[10px] text-[#17102A]/60 font-mono mt-0.5 line-clamp-1">{km.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Client Brands */}
-                <div className="pt-2 text-xs font-mono text-[#17102A]/70">
-                  <span className="text-[#6B3BA6] font-medium">Proven With:</span>{" "}
-                  {ind.featuredBrands.join(" • ")}
+                <div className="pt-4 border-t border-[#D9D2C5]/50 flex items-center justify-between">
+                  <Link
+                    href={`/industries/${ind.slug}`}
+                    className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#17102A] group-hover:text-[#6B3BA6] font-medium"
+                  >
+                    <span>Explore Vertical Playbook</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
-
-              <div className="pt-4 border-t border-[#D9D2C5]/50 flex items-center justify-between">
-                <Link
-                  href={`/industries/${ind.slug}`}
-                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#17102A] group-hover:text-[#6B3BA6] font-medium"
-                >
-                  <span>Explore Vertical Playbook</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>

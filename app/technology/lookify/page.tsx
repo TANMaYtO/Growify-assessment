@@ -25,9 +25,7 @@ export default function LookifyPage(): React.JSX.Element {
   return (
     <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
       {/* Top Breadcrumb & Hero */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#1F7A8C]/20 rounded-full blur-3xl pointer-events-none" />
-
+      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-[#D9D2C5]/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>

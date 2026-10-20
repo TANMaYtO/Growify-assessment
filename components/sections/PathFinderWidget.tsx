@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useReview } from '../review/ReviewContext';
 import { Compass, ArrowRight, RotateCcw, Check, Sparkles } from 'lucide-react';
+import { ScrollReveal } from '../motion/ScrollReveal';
 
 interface Question {
   id: string;
@@ -102,20 +103,23 @@ export function PathFinderWidget() {
   return (
     <section className="py-16 md:py-24 bg-[#FAF7F2] border-t border-[#D9D2C5] font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#EFEAE1] border border-[#D9D2C5] text-xs font-mono text-[#6B3BA6] mb-3">
-            <Compass className="w-3.5 h-3.5" />
-            <span>Interactive Diagnostic Widget</span>
+        <ScrollReveal animation="fade-up">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#EFEAE1] border border-[#D9D2C5] text-xs font-mono text-[#6B3BA6] mb-3">
+              <Compass className="w-3.5 h-3.5" />
+              <span>Interactive Diagnostic Widget</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl text-[#17102A] font-normal">
+              Growth Path Finder
+            </h2>
+            <p className="text-xs sm:text-sm text-[#17102A]/70 mt-2">
+              Answer 3 diagnostic questions to receive a tailored commerce and growth operating stack for your brand.
+            </p>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl text-[#17102A] font-normal">
-            Growth Path Finder
-          </h2>
-          <p className="text-xs sm:text-sm text-[#17102A]/70 mt-2">
-            Answer 3 diagnostic questions to receive a tailored commerce and growth operating stack for your brand.
-          </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-lg p-6 sm:p-10 shadow-sm">
+        <ScrollReveal animation="fade-up" delay={120}>
+          <div className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-lg p-6 sm:p-10 shadow-sm">
           {!completed ? (
             <div>
               {/* Progress Indicator */}
@@ -206,6 +210,7 @@ export function PathFinderWidget() {
             </div>
           )}
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

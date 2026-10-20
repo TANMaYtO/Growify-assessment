@@ -6,6 +6,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { ReviewToolbar } from '@/components/review/ReviewToolbar';
 import { AnalyticsDebugPanel } from '@/components/telemetry/AnalyticsDebugPanel';
+import { ScrollProgress } from '@/components/motion/ScrollProgress';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -98,6 +99,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#F5F1EA] text-[#17102A]">
+        {/* Top Hairline Scroll Progress Bar */}
+        <ScrollProgress />
+
         {/* Skip to Content Link for Accessibility */}
         <a
           href="#main-content"

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useReview } from '../review/ReviewContext';
 import { Sparkles, ArrowUpRight, Shirt, Tablet, Lock, CheckCircle2 } from 'lucide-react';
+import { ScrollReveal } from '../motion/ScrollReveal';
 
 export function TechShowcase() {
   const { trackEvent } = useReview();
@@ -40,20 +41,23 @@ export function TechShowcase() {
     <section className="py-16 md:py-24 bg-[#FAF7F2] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-12">
-          <span className="text-xs font-mono tracking-widest uppercase text-[#6B3BA6] block mb-2">
-            Proprietary Products & Technology
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#17102A]">
-            Technology we build and run ourselves.
-          </h2>
-          <p className="text-sm sm:text-base text-[#17102A]/80 mt-3 leading-relaxed">
-            Growify is not just a services company. We build software platforms that eliminate commercial friction for luxury houses—deployed on online storefronts and in brick-and-mortar retail showrooms.
-          </p>
-        </div>
+        <ScrollReveal animation="fade-up">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-mono tracking-widest uppercase text-[#6B3BA6] block mb-2">
+              Proprietary Products & Technology
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#17102A]">
+              Technology we build and run ourselves.
+            </h2>
+            <p className="text-sm sm:text-base text-[#17102A]/80 mt-3 leading-relaxed">
+              Growify is not just a services company. We build software platforms that eliminate commercial friction for luxury houses—deployed on online storefronts and in brick-and-mortar retail showrooms.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Marquee Product Flagship: Lookify */}
-        <div className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-xl p-6 sm:p-10 shadow-sm mb-12">
+        <ScrollReveal animation="fade-up" delay={120}>
+          <div className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-xl p-6 sm:p-10 shadow-sm mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left: Product Overview */}
             <div className="lg:col-span-7 space-y-6">
@@ -167,7 +171,7 @@ export function TechShowcase() {
                   alt={garmentPreviews[selectedGarment].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono">
@@ -203,9 +207,11 @@ export function TechShowcase() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
         {/* Secondary Products Grid: Rossify & Craftify */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ScrollReveal animation="fade-up" delay={160}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Rossify */}
           <div className="bg-[#FAF7F2] border border-[#D9D2C5] rounded-lg p-6 sm:p-8 space-y-4">
             <div className="flex items-center justify-between">
@@ -284,6 +290,7 @@ export function TechShowcase() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

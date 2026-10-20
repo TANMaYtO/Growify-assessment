@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ScrollReveal } from '../motion/ScrollReveal';
 
 const faqItems = [
   {
@@ -40,46 +41,50 @@ export function ExecutiveFAQ() {
   return (
     <section className="py-16 md:py-24 bg-[#F5F1EA] border-t border-[#D9D2C5] font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#FAF7F2] border border-[#D9D2C5] text-xs font-mono text-[#6B3BA6] mb-3">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Executive Clarifications</span>
-          </div>
-          <h2 className="font-display text-3xl sm:text-4xl text-[#17102A] font-normal">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xs sm:text-sm text-[#17102A]/70 mt-2">
-            Direct answers on our scope, methodology, technology, and commercial operating standards.
-          </p>
-        </div>
-
-        <div className="space-y-3">
-          {faqItems.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#FAF7F2] border border-[#D9D2C5] rounded-lg overflow-hidden transition-all"
-            >
-              <button
-                onClick={() => toggle(idx)}
-                className="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none"
-              >
-                <span className="text-sm sm:text-base font-semibold text-[#17102A]">
-                  {item.q}
-                </span>
-                <ChevronDown
-                  className={`w-4 h-4 text-[#17102A]/60 transition-transform ${
-                    openIdx === idx ? 'rotate-180 text-[#6B3BA6]' : ''
-                  }`}
-                />
-              </button>
-              {openIdx === idx && (
-                <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#17102A]/80 border-t border-[#D9D2C5]/50 leading-relaxed font-sans">
-                  {item.a}
-                </div>
-              )}
+        <ScrollReveal animation="fade-up">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#FAF7F2] border border-[#D9D2C5] text-xs font-mono text-[#6B3BA6] mb-3">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Executive Clarifications</span>
             </div>
-          ))}
-        </div>
+            <h2 className="font-display text-3xl sm:text-4xl text-[#17102A] font-normal">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xs sm:text-sm text-[#17102A]/70 mt-2">
+              Direct answers on our scope, methodology, technology, and commercial operating standards.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-up" delay={100}>
+          <div className="space-y-3">
+            {faqItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-[#FAF7F2] border border-[#D9D2C5] rounded-lg overflow-hidden transition-all"
+              >
+                <button
+                  onClick={() => toggle(idx)}
+                  className="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none"
+                >
+                  <span className="text-sm sm:text-base font-semibold text-[#17102A]">
+                    {item.q}
+                  </span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-[#17102A]/60 transition-transform ${
+                      openIdx === idx ? 'rotate-180 text-[#6B3BA6]' : ''
+                    }`}
+                  />
+                </button>
+                {openIdx === idx && (
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#17102A]/80 border-t border-[#D9D2C5]/50 leading-relaxed font-sans">
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

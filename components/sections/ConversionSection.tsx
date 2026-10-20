@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ShieldCheck, ArrowRight, CheckCircle2, Clock, Calendar, Sparkles } from "lucide-react";
+import { ScrollReveal } from "../motion/ScrollReveal";
 
 /**
  * Interface representing the form data for the flagship growth audit.
@@ -80,58 +81,59 @@ export function ConversionSection(): React.JSX.Element {
   }
 
   return (
-    <section id="audit-intake" className="py-24 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden">
-      {/* Decorative gradient aura */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#6B3BA6]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#1F7A8C]/20 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="audit-intake" className="py-24 bg-[#120D1C] text-[#F5F1EA] relative overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Context & Guarantees */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
-              <Sparkles className="w-3.5 h-3.5 text-[#1F7A8C]" />
-              <span>Flagship Architecture Audit</span>
-            </div>
+          <div className="lg:col-span-5">
+            <ScrollReveal animation="fade-up">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
+                  <Sparkles className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                  <span>Flagship Architecture Audit</span>
+                </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-[1.15]">
-              Audit your flagship store’s <span className="italic font-normal text-white">unit economics</span>.
-            </h2>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-[1.15]">
+                  Audit your flagship store’s <span className="italic font-normal text-white">unit economics</span>.
+                </h2>
 
-            <p className="text-base text-[#D9D2C5] leading-relaxed">
-              Three initial inputs. We analyze your catalog architecture, retention bottlenecks, and international expansion readiness. Under 4 hours response time for enterprise commerce brands.
-            </p>
-
-            <div className="space-y-4 pt-4 border-t border-white/10">
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#1F7A8C] shrink-0 mt-0.5" />
-                <p className="text-xs text-[#D9D2C5] leading-relaxed">
-                  <strong className="text-white block font-medium">Strict NDA & IP Protection</strong>
-                  We never share brand revenue metrics, SKU performance, or customer logs with third parties.
+                <p className="text-base text-[#D9D2C5] leading-relaxed">
+                  Three initial inputs. We analyze your catalog architecture, retention bottlenecks, and international expansion readiness. Under 4 hours response time for enterprise commerce brands.
                 </p>
-              </div>
 
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-[#1F7A8C] shrink-0 mt-0.5" />
-                <p className="text-xs text-[#D9D2C5] leading-relaxed">
-                  <strong className="text-white block font-medium">Executive Response Guarantee</strong>
-                  Every audit report is reviewed by our engineering and performance directors in New Delhi.
-                </p>
-              </div>
-            </div>
+                <div className="space-y-4 pt-4 border-t border-white/10">
+                  <div className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-[#1F7A8C] shrink-0 mt-0.5" />
+                    <p className="text-xs text-[#D9D2C5] leading-relaxed">
+                      <strong className="text-white block font-medium">Strict NDA & IP Protection</strong>
+                      We never share brand revenue metrics, SKU performance, or customer logs with third parties.
+                    </p>
+                  </div>
 
-            <div className="pt-2">
-              <div className="text-xs font-mono uppercase tracking-wider text-[#D9D2C5]/70 mb-2">Trusted By Founders & CXOs At</div>
-              <div className="text-sm font-serif italic text-white/90">
-                Tarun Tahiliani • Mahima Mahajan • House of Masaba • Ridhi Mehra
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-[#1F7A8C] shrink-0 mt-0.5" />
+                    <p className="text-xs text-[#D9D2C5] leading-relaxed">
+                      <strong className="text-white block font-medium">Executive Response Guarantee</strong>
+                      Every audit report is reviewed by our engineering and performance directors in New Delhi.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <div className="text-xs font-mono uppercase tracking-wider text-[#D9D2C5]/70 mb-2">Trusted By Founders & CXOs At</div>
+                  <div className="text-sm font-serif italic text-white/90">
+                    Tarun Tahiliani • Mahima Mahajan • House of Masaba • Ridhi Mehra
+                  </div>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Column: Interactive Progressive Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#241B3B] border border-white/15 rounded-2xl p-6 sm:p-10 shadow-2xl relative">
+            <ScrollReveal animation="fade-left" delay={120}>
+              <div className="bg-[#241B3B] border border-white/15 rounded-2xl p-6 sm:p-10 shadow-2xl relative">
               
               {!submitted ? (
                 <div>
@@ -338,7 +340,8 @@ export function ConversionSection(): React.JSX.Element {
               )}
 
             </div>
-          </div>
+          </ScrollReveal>
+        </div>
 
         </div>
       </div>

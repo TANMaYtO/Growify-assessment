@@ -440,7 +440,7 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
                 alt={currentClip.location}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#17102A]/90 via-[#17102A]/30 to-transparent" />
+              <div className="absolute inset-0 bg-black/40 pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#1F7A8C] bg-white/15 backdrop-blur-md px-2.5 py-1 rounded border border-white/20">

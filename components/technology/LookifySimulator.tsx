@@ -249,11 +249,7 @@ export function LookifySimulator(): React.JSX.Element {
   }
 
   return (
-    <div className="bg-[#17102A] text-white rounded-3xl border border-white/15 p-6 sm:p-10 shadow-2xl overflow-hidden relative">
-      {/* Background ambient luxury lighting */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#1F7A8C]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#6B3BA6]/15 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="bg-[#120D1C] text-white rounded-3xl border border-white/15 p-6 sm:p-10 shadow-2xl overflow-hidden relative">
       {/* Header bar */}
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-white/10 gap-4">
         <div>
@@ -454,10 +450,10 @@ export function LookifySimulator(): React.JSX.Element {
             <button
               onClick={handleRunDraping}
               disabled={isDraping}
-              className={`w-full py-4 rounded-xl font-medium text-sm inline-flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-xl ${
+              className={`w-full py-4 rounded-xl font-mono text-xs uppercase tracking-widest font-semibold inline-flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-md ${
                 isDraping
                   ? "bg-white/10 text-[#D9D2C5] cursor-not-allowed"
-                  : "bg-gradient-to-r from-[#1F7A8C] to-[#6B3BA6] hover:brightness-110 text-white"
+                  : "bg-[#1F7A8C] hover:bg-[#176675] text-white border border-[#1F7A8C]/60 hover:shadow-lg"
               }`}
             >
               {isDraping ? (
@@ -507,7 +503,7 @@ export function LookifySimulator(): React.JSX.Element {
                 <span className="text-white font-medium">
                   {viewMode === "vto" && "Split-Screen Draping View"}
                   {viewMode === "mesh" && "24-Point Neural Landmark Topology"}
-                  {viewMode === "heatmap" && "Finite-Element Tension Gradient"}
+                  {viewMode === "heatmap" && "Finite-Element Tension Field & Contours"}
                   {viewMode === "fabric" && "Micro-Texture & Specular Analysis"}
                 </span>
               </div>
@@ -558,10 +554,10 @@ export function LookifySimulator(): React.JSX.Element {
                       alt={selectedGarment.name}
                       className="w-full h-full object-cover"
                     />
-                    {/* Lighting & Shadow Falloff Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+                    {/* Clean Shadow Falloff */}
+                    <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
-                    <div className="absolute top-3 right-3 bg-[#1F7A8C]/90 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-mono text-white border border-white/30">
+                    <div className="absolute top-3 right-3 bg-[#1F7A8C] px-2.5 py-1 rounded text-[10px] font-mono text-white border border-white/20">
                       Lookify Neural Drape
                     </div>
                   </div>
@@ -597,13 +593,6 @@ export function LookifySimulator(): React.JSX.Element {
 
                   {/* SVG Triangulation Mesh Lines */}
                   <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                    <defs>
-                      <linearGradient id="meshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#1F7A8C" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#6B3BA6" stopOpacity="0.8" />
-                      </linearGradient>
-                    </defs>
-
                     {/* Torso & Shoulder Triangles */}
                     <polygon
                       points="50%,19% 39%,22% 43%,29%"
@@ -747,25 +736,60 @@ export function LookifySimulator(): React.JSX.Element {
                     className="w-full h-full object-cover"
                   />
 
-                  {/* Finite Element Heatmap Color Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/25 via-amber-500/25 to-cyan-500/20 mix-blend-overlay pointer-events-none" />
+                  {/* Technical CAD Finite-Element Stress Boundaries (Zero AI Slop Gradients) */}
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
+                    {/* Bust Contour Zone */}
+                    <rect
+                      x="30%"
+                      y="24%"
+                      width="40%"
+                      height="12%"
+                      rx="6"
+                      fill="#F59E0B"
+                      fillOpacity="0.14"
+                      stroke="#F59E0B"
+                      strokeWidth="1"
+                      strokeDasharray="4 3"
+                    />
+                    {/* Waist Cinch Zone */}
+                    <rect
+                      x="33%"
+                      y="39%"
+                      width="34%"
+                      height="10%"
+                      rx="4"
+                      fill="#10B981"
+                      fillOpacity="0.16"
+                      stroke="#10B981"
+                      strokeWidth="1.2"
+                    />
+                    {/* Hemline Flare Sweep Zone */}
+                    <polygon
+                      points="35%,54% 65%,54% 75%,88% 25%,88%"
+                      fill="#06B6D4"
+                      fillOpacity="0.12"
+                      stroke="#06B6D4"
+                      strokeWidth="1"
+                      strokeDasharray="5 3"
+                    />
+                  </svg>
 
                   {/* Tension Hotspot Indicators */}
-                  <div className="absolute top-[28%] left-[38%] right-[38%] py-1 px-2 rounded bg-amber-500/80 backdrop-blur-xs text-black text-[9px] font-mono font-bold text-center border border-amber-300">
-                    Bust Contour: 99.4% (1.2% Stretch)
+                  <div className="absolute top-[26%] left-[32%] right-[32%] py-1 px-2 rounded bg-[#17102A]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-amber-400 z-20">
+                    Bust Contour: 99.4% (1.2% Strain)
                   </div>
 
-                  <div className="absolute top-[42%] left-[36%] right-[36%] py-1 px-2 rounded bg-emerald-500/90 backdrop-blur-xs text-black text-[9px] font-mono font-bold text-center border border-emerald-300">
+                  <div className="absolute top-[41%] left-[34%] right-[34%] py-1 px-2 rounded bg-[#17102A]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-emerald-400 z-20">
                     Waist Cinch: 98.7% Optimal
                   </div>
 
-                  <div className="absolute top-[75%] left-[30%] right-[30%] py-1 px-2 rounded bg-cyan-500/80 backdrop-blur-xs text-black text-[9px] font-mono font-bold text-center border border-cyan-200">
+                  <div className="absolute top-[75%] left-[28%] right-[28%] py-1 px-2 rounded bg-[#17102A]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-cyan-400 z-20">
                     Hem Sweep: +8.4cm Fluid Flare
                   </div>
 
                   {/* Heatmap Legend */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-md rounded-xl p-3 border border-white/20 text-[10px] font-mono space-y-2 z-20">
-                    <div className="text-white font-medium">Finite-Element Tension Gradient:</div>
+                  <div className="absolute bottom-4 left-4 right-4 bg-[#17102A]/95 backdrop-blur-md rounded-xl p-3 border border-white/20 text-[10px] font-mono space-y-2 z-20">
+                    <div className="text-white font-medium">Finite-Element Strain Analysis:</div>
                     <div className="flex items-center justify-between text-[9px]">
                       <span className="flex items-center gap-1.5 text-emerald-400">
                         <span className="w-2 h-2 rounded-full bg-emerald-400" />
@@ -797,9 +821,14 @@ export function LookifySimulator(): React.JSX.Element {
                         alt={selectedGarment.name}
                         className="w-full h-full object-cover scale-150 transform hover:scale-175 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-radial from-transparent to-black/60 pointer-events-none" />
-                      <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 text-[10px] font-mono text-white border border-white/20">
-                        8x Macro Threadwork Inspection
+                      {/* Technical Optical Reticle Overlay */}
+                      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40">
+                        <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#1F7A8C" strokeWidth="1" strokeDasharray="4 4" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#1F7A8C" strokeWidth="1" strokeDasharray="4 4" />
+                        <circle cx="50%" cy="50%" r="40" stroke="#1F7A8C" strokeWidth="1" fill="none" />
+                      </svg>
+                      <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 text-[10px] font-mono text-white border border-white/20">
+                        8x Macro Threadwork Calibration
                       </div>
                     </div>
 

@@ -5,6 +5,7 @@ import { caseStudies, pipelineCaseStudies } from "@/content/facts";
 import type { CaseStudy, PipelineItem, MetricPoint } from "@/content/facts";
 import { ArrowRight, Trophy, CheckCircle2, AlertCircle, Sparkles } from "lucide-react";
 import { SeamDivider } from "@/components/ui/SeamDivider";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Selected Work & Case Studies | Growify Luxury Flagships",
@@ -22,9 +23,7 @@ export default function WorkPage(): React.JSX.Element {
   return (
     <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
       {/* Page Header */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#1F7A8C]/20 rounded-full blur-3xl pointer-events-none" />
-
+      <section className="pt-32 pb-20 bg-[#120D1C] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
@@ -61,10 +60,10 @@ export default function WorkPage(): React.JSX.Element {
 
         <div className="space-y-12">
           {publishedCases.map((cs, idx) => (
-            <div
-              key={cs.slug}
-              className="bg-white border border-[#D9D2C5] rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12"
-            >
+            <ScrollReveal key={cs.slug} animation="fade-up" delay={idx * 120}>
+              <div
+                className="bg-white border border-[#D9D2C5] rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12"
+              >
               {/* Left Column: Visual & Headline with High-Fashion Editorial Photography */}
               <div className="lg:col-span-5 relative text-white p-8 sm:p-12 flex flex-col justify-between overflow-hidden min-h-[400px] bg-[#17102A] group">
                 {/* Background Image with Dark Luxury Vignette */}
@@ -75,8 +74,7 @@ export default function WorkPage(): React.JSX.Element {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17102A] via-[#17102A]/80 to-[#17102A]/60" />
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#1F7A8C]/20 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute inset-0 bg-black/60 pointer-events-none" />
 
                 <div className="space-y-6 relative z-10">
                   <div className="flex items-center justify-between">
@@ -172,6 +170,7 @@ export default function WorkPage(): React.JSX.Element {
                 </div>
               </div>
             </div>
+          </ScrollReveal>
           ))}
         </div>
       </section>

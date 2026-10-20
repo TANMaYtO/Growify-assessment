@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useReview } from '../review/ReviewContext';
 import { ArrowUpRight, Sparkles, CheckCircle2, Layers } from 'lucide-react';
+import { ScrollReveal } from '../motion/ScrollReveal';
 
 interface StageData {
   letter: string;
@@ -102,34 +103,37 @@ export function SCALEExplorer() {
     <section className="py-16 md:py-24 bg-[#F5F1EA] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <span className="text-xs font-mono tracking-widest uppercase text-[#6B3BA6] block mb-2">
-              Proprietary Operating System
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#17102A]">
-              The S.C.A.L.E. Methodology
-            </h2>
-          </div>
+        <ScrollReveal animation="fade-up">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <span className="text-xs font-mono tracking-widest uppercase text-[#6B3BA6] block mb-2">
+                Proprietary Operating System
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#17102A]">
+                The S.C.A.L.E. Methodology
+              </h2>
+            </div>
 
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-[#17102A]/70 font-medium">Overlay AI Layer:</span>
-            <button
-              onClick={handleAiToggle}
-              className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all flex items-center gap-1.5 border ${
-                showAiLayer
-                  ? 'bg-[#17102A] text-teal-300 border-teal-500/50 shadow-sm'
-                  : 'bg-[#FAF7F2] text-[#17102A]/70 border-[#D9D2C5] hover:border-[#6B3BA6]'
-              }`}
-            >
-              <Sparkles className={`w-3.5 h-3.5 ${showAiLayer ? 'text-teal-400' : 'text-[#6B3BA6]'}`} />
-              <span>{showAiLayer ? 'AI Layer Active' : 'Show AI Intelligence'}</span>
-            </button>
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-[#17102A]/70 font-medium">Overlay AI Layer:</span>
+              <button
+                onClick={handleAiToggle}
+                className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all flex items-center gap-1.5 border ${
+                  showAiLayer
+                    ? 'bg-[#17102A] text-teal-300 border-teal-500/50 shadow-sm'
+                    : 'bg-[#FAF7F2] text-[#17102A]/70 border-[#D9D2C5] hover:border-[#6B3BA6]'
+                }`}
+              >
+                <Sparkles className={`w-3.5 h-3.5 ${showAiLayer ? 'text-teal-400' : 'text-[#6B3BA6]'}`} />
+                <span>{showAiLayer ? 'AI Layer Active' : 'Show AI Intelligence'}</span>
+              </button>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Tab Controls */}
-        <div className="grid grid-cols-5 border border-[#D9D2C5] rounded bg-[#FAF7F2] overflow-hidden mb-8">
+        <ScrollReveal animation="fade-up" delay={120}>
+          {/* Tab Controls */}
+          <div className="grid grid-cols-5 border border-[#D9D2C5] rounded bg-[#FAF7F2] overflow-hidden mb-8">
           {stages.map((stg, idx) => (
             <button
               key={stg.letter}
@@ -261,6 +265,7 @@ export function SCALEExplorer() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

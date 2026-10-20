@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Target, Home, MessageSquare, Compass, Cpu } from 'lucide-react';
+import { ScrollReveal } from '../motion/ScrollReveal';
 
 const pillars = [
   {
@@ -35,31 +36,34 @@ export function WhyGrowify() {
   return (
     <section className="py-16 md:py-24 bg-[#FAF7F2] border-t border-[#D9D2C5] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
-          <span className="text-xs font-mono tracking-widest uppercase text-[#6B3BA6] block mb-2">
-            The Operating Standard
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#17102A]">
-            Why India’s iconic designer houses partner with Growify.
-          </h2>
-        </div>
+        <ScrollReveal animation="fade-up">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-mono tracking-widest uppercase text-[#6B3BA6] block mb-2">
+              The Operating Standard
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#17102A]">
+              Why India’s iconic designer houses partner with Growify.
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pillars.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-lg p-6 sm:p-8 space-y-3"
-            >
-              <div className="w-10 h-10 rounded-full bg-[#FAF7F2] border border-[#D9D2C5] flex items-center justify-center">
-                {item.icon}
+            <ScrollReveal key={idx} animation="fade-up" delay={idx * 80}>
+              <div
+                className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-lg p-6 sm:p-8 space-y-3 h-full"
+              >
+                <div className="w-10 h-10 rounded-full bg-[#FAF7F2] border border-[#D9D2C5] flex items-center justify-center">
+                  {item.icon}
+                </div>
+                <h3 className="font-display text-xl font-medium text-[#17102A]">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#17102A]/80 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="font-display text-xl font-medium text-[#17102A]">
-                {item.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-[#17102A]/80 leading-relaxed">
-                {item.description}
-              </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

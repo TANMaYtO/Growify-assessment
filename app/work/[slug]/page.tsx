@@ -6,6 +6,7 @@ import { caseStudies } from "@/content/facts";
 import type { MetricPoint } from "@/content/facts";
 import { ArrowRight, ArrowLeft, CheckCircle2, ShieldCheck, Layers, Terminal, Sparkles } from "lucide-react";
 import { SeamDivider } from "@/components/ui/SeamDivider";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
@@ -57,9 +58,7 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyPageProps
   return (
     <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
       {/* Top Breadcrumb & Hero */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#6B3BA6]/20 rounded-full blur-3xl pointer-events-none" />
-
+      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-[#D9D2C5]/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -115,7 +114,7 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyPageProps
             alt={`${cs.brand} Flagship Case Study`}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#17102A]/90 via-[#17102A]/30 to-transparent" />
+          <div className="absolute inset-0 bg-black/45" />
           <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-[#1F7A8C] bg-white/10 backdrop-blur-md px-3 py-1 rounded border border-white/20">
