@@ -8,6 +8,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { SeamDivider } from '../ui/SeamDivider';
 import { ScrollReveal } from '../motion/ScrollReveal';
 import { ParallaxImage } from '../motion/ParallaxImage';
+import { ParallaxCard } from '../motion/ParallaxCard';
 
 export function SelectedWork() {
   const cases = Object.values(caseStudies);
@@ -39,9 +40,10 @@ export function SelectedWork() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cases.map((cs, idx) => (
             <ScrollReveal key={cs.slug} animation="fade-up" delay={idx * 140}>
-              <article
-                className="bg-[#F7F5F0] border border-[#D9D2C5] rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-[#9E7D47]/60 transition-all hover:shadow-xl group h-full"
-              >
+              <ParallaxCard maxTilt={3.5} className="h-full">
+                <article
+                  className="bg-[#F7F5F0] border border-[#D9D2C5] rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-[#9E7D47]/60 transition-all hover:shadow-xl group h-full"
+                >
                 <div className="space-y-4">
                   {/* Editorial Couture Image Banner with Parallax */}
                   <div className="relative aspect-16/10 rounded-lg overflow-hidden border border-[#D9D2C5]/70 bg-black/10">
@@ -106,7 +108,8 @@ export function SelectedWork() {
                   </Link>
                 </div>
               </article>
-            </ScrollReveal>
+            </ParallaxCard>
+          </ScrollReveal>
           ))}
         </div>
       </div>
