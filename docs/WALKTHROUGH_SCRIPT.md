@@ -14,7 +14,7 @@
 0:45 ─── [02. Desktop Flagship & S.C.A.L.E.] ─── 2:00
 2:00 ─── [03. Lookify VTO & Tech Ecosystem] ─── 3:00
 3:00 ─── [04. Review Mode & Analytics Debug] ─── 3:45
-3:45 ─── [05. Office Tour & Mobile Capability Gate] ─── 4:30
+3:45 ─── [05. Office Tour & Architectural Walkthrough] ─── 4:30
 ```
 
 ---
@@ -39,7 +39,7 @@
 **Visual on Screen:** Smooth scroll down homepage. Hover over verified proof strip markers. Interact with the 5 tabs of S.C.A.L.E. Toggle the 'AI Layer' switch. Click through to `/services/shopify-development`, then navigate to `/work/tarun-tahiliani`.
 
 > **VOICEOVER:**  
-> "On the homepage, you immediately notice editorial restraint: the 'Haute Rigor' palette in luxury bone, deep royal ink, and imperial violet.  
+> "On the homepage, you immediately notice architectural restraint: the bespoke Haute Couture palette in Warm Alabaster Linen, Architectural Obsidian, and Warm Antique Gold.  
 > 
 > Notice our interactive S.C.A.L.E. Operating System explorer. We've synchronized Growify's six practices across Setup, Capture, Activate, Lead, and Establish. With one click, founders can toggle the 'AI Intelligence Layer' to see exactly where proprietary machine learning models accelerate each phase.  
 > 
@@ -66,33 +66,31 @@
 
 ### ACT 4: REVIEW MODE & LIVE TELEMETRY DEBUGGER
 **Time:** 3:00 – 3:45 (45 Seconds)  
-**Visual on Screen:** Hit `Cmd+Shift+R` to toggle Review Mode on. Hover over the metric cards on `/work/mahima-mahajan`. Show the hover inspection tooltips displaying verification source and status `[V]`, `[S]`, and `[U]`. Open the bottom Telemetry Debug Drawer showing live `dataLayer` event payloads.
+**Visual on Screen:** Open `/review` or toggle Review Mode in footer. Hover over the metric cards on `/work/mahima-mahajan`. Show the verification source and status `[V]`, `[S]`, and `[U]`. Show live dataLayer event payloads in console or diagnostic drawer.
 
 > **VOICEOVER:**  
-> "Now for our killer differentiator: Review Mode.  
+> "Now for our killer differentiator: Review Mode and the Validation Ledger.  
 > 
-> By pressing Command+Shift+R or using the floating toolbar, the site transforms into an interactive audit workbench.  
-> 
-> In strict accordance with your brief, zero metrics are manufactured. Every figure is mapped to our typed single source of truth in `facts.ts`. Verified public metrics display teal badges; supplied deck metrics display gold tags.  
+> In strict accordance with your brief, zero metrics are manufactured. Every figure is mapped to our typed single source of truth in `facts.ts`. Verified public metrics display verified badges; supplied deck metrics display deck tags.  
 > 
 > Notice how we handled the Mahima Mahajan '251%' metric from Slide 17 of your deck: because a revenue share cannot mathematically exceed 100%, we quarantined it under 'Pending Validation' and logged the discrepancy in our public `/review` ledger, identifying it as a likely conflation with international sales growth.  
 > 
-> Our Analytics Debug Panel displays live GTM and GA4 dataLayer events on every interaction."
+> Our structured dataLayer pushes standard GA4 snake_case events on every CTA interaction."
 
 ---
 
-### ACT 5: BONUS OFFICE WALKTHROUGH & MOBILE CAPABILITY GATE
+### ACT 5: BONUS OFFICE WALKTHROUGH & ARCHITECTURAL EXPERIENCE
 **Time:** 3:45 – 4:30 (45 Seconds)  
-**Visual on Screen:** Navigate to `/life-at-growify`. Scrub the timeline slider on desktop to demonstrate canvas perspective changes and hotspot HUD popups. Toggle device mode to iPhone 15 Pro in Chrome DevTools to demonstrate the automated hardware capability gate switching to the Lite Snap Carousel.
+**Visual on Screen:** Navigate to `/life-at-growify`. Play the video walkthrough of Growify's 7,000 sq ft New Delhi studio campus. Click through the 6 quick-jump studio zones (The Grand Reception, The Main Engineering Floor, The Executive Strategy Suite, High-Velocity Pod, Lookify AI Lab, and Studio Commons). Toggle fullscreen and timeline scrubbing.
 
 > **VOICEOVER:**  
-> "Finally, the bonus challenge: 'Walk the Floor' of Growify's 7,000 sq ft New Delhi studio campus.  
+> "Finally, the bonus challenge: an interactive walkthrough of Growify's 7,000 sq ft New Delhi studio campus.  
 > 
-> Rather than relying on raw MP4 video scrubbing—which stutters and crashes on mobile iOS devices—we engineered an HTML5 Canvas perspective rendering engine with four interactive studio hotspots: the Brand Wall, the Growth War Room, the Lookify AI Lab, and the 18+ hour assisted sales bullpen.  
+> Structured into six distinct architectural zones—from the executive client reception gallery to the 35+ engineer main floor and the Lookify computer vision lab—founders can take a seamless virtual tour of the headquarters where their digital flagships are built.  
 > 
-> On mobile devices or low-bandwidth connections, our universal capability gate automatically switches to a buttery Lite Snap Carousel, guaranteeing 60fps performance and zero broken layouts for every visitor.  
+> Every department is paired with authenticated operational highlights and instant zone-jumping navigation.  
 > 
-> The codebase is fully typed, 100% verified, and ready for immediate deployment. Thank you, and I look forward to building with Growify."
+> The entire codebase is fully typed, 100% verified across 41 static routes, and ready for immediate deployment. Thank you, and I look forward to building with Growify."
 
 ---
 *(End of Script · Ready for Screen Recording)*

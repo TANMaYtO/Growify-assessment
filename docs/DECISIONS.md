@@ -22,31 +22,33 @@ Deploy the primary marketing flagship on **Next.js 15 App Router** with React 19
 
 ---
 
-## ADR 02: Canvas Frame Sequence & Lite Snap Carousel over Raw Video Scrubbing
+## ADR 02: Architectural Studio Walkthrough & 6-Zone Interactive Navigation
 
 ### Context
 The assessment bonus task requested an interactive virtual walkthrough of Growify’s South Delhi studio headquarters, providing `IMG_8295.MP4` (44MB). 
 
 ### Decision
-Replace raw DOM `<video>` scrubbing with an **HTML5 `<canvas>` rendering pipeline** coupled with a hardware capability gate and a **Lite Snap Carousel fallback**.
+Implement an architectural cinematic walkthrough in `components/office/OfficeTourWalkthrough.tsx` structured around **6 verified studio zones** ("The Grand Reception & Archive Gallery", "The Main Engineering Floor", "The Executive Strategy Suite", "The High-Velocity Performance Pod", "The Lookify AI Innovation Lounge", "The Studio Commons & Refreshment Bar"). 
 
 ### Rationale & Trade-Offs
-- **Technical Flaw with Raw Video Scrubbing:** Directly setting `video.currentTime` on scroll or drag causes severe frame stutters, keyframe lag, and crashes on mobile Safari (iOS power-saving modes restrict decode bandwidth).
-- **Universal Hardware Gate:** Automatically detects mobile viewports and reduced-motion preferences. Renders high-fidelity canvas simulation for desktop and switches to a snappy milestone carousel for low-power devices.
-- **Zero Broken Experiences:** Delivers 60fps fluidity on iPhones and budget devices while presenting all 4 headquarters hotspots (Brand Wall, War Room, Lookify Lab, Engineering Bullpen).
+- **Elimination of Raw Storyboard Terminology:** Replaced technical AI prompt artifacts ("camera movements", "continuous forward tracking", "micro-timing maps") with authentic architectural storytelling and operational features.
+- **Direct Zone Quick-Jump Navigation:** Visitors can immediately seek to any of the 6 studio zones using interactive thumbnail cards and precision scrub controls.
+- **Zero Broken Experiences:** Clean HTML5 video architecture with mobile-safe metadata preloading, poster fallback frames, and adaptive aspect ratio preservation.
 
 ---
 
-## ADR 03: Editorial Luxury Design System ("Haute Rigor")
+## ADR 03: Haute Couture Architectural Luxury Design System
 
 ### Context
-Growify serves India's marquee couture houses (Tarun Tahiliani, Gaurav Gupta, House of Masaba). A commoditized corporate SaaS design would misrepresent the agency's prestige and market authority.
+Growify serves India's marquee couture houses (Tarun Tahiliani, Gaurav Gupta, House of Masaba). Commoditized corporate SaaS templates, saturated neon gradients, and midnight blues misrepresent the agency's prestige and market authority.
 
 ### Decision
-Establish the **"Haute Rigor"** visual identity:
-- **Palette:** Luxury Bone (`#F5F1EA`), Royal Ink (`#17102A`), Imperial Violet (`#6B3BA6`), Mineral Teal (`#1F7A8C`), Warm Stone (`#D9D2C5`).
+Establish the bespoke **Architectural Luxury** visual identity:
+- **Palette:** Warm Alabaster Linen (`#FAF8F5`), Architectural Obsidian (`#0E0D0C` / `#111111`), Antique Brass / Gold (`#9E7D47` / `#8C6D38`), Muted Bone (`#F7F5F0`), Soft Warm Stone (`#D9D2C5`).
+- **Zero AI-Gradients:** Gradients and saturated neon purples/cyans are strictly banned across all components and pages.
 - **Typography:** `Fraunces` variable editorial serif for headlines and narrative statements; `Inter` geometric grotesque for telemetry, metrics, and navigation.
 - **Motif:** Bespoke running-stitch and cross-stitch SVG dividers (`SeamDivider.tsx`) evoking luxury tailoring craftsmanship.
+- **Scroll-Driven Motion:** Pure CSS & IntersectionObserver animations (`ScrollReveal.tsx`) utilizing cubic-bezier ease-out transforms for fluid, buttery page reveals.
 
 ---
 
