@@ -39,7 +39,7 @@ export function ScrollProgress(): React.JSX.Element {
       className="fixed top-0 left-0 right-0 h-[2.5px] bg-transparent z-[60] pointer-events-none"
     >
       <div
-        className="h-full bg-[#1F7A8C] transition-transform duration-75 ease-out origin-left will-change-transform"
+        className="h-full bg-[#9E7D47] transition-transform duration-75 ease-out origin-left will-change-transform"
         style={{ transform: `scaleX(${progress})` }}
       />
     </div>

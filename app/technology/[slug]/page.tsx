@@ -137,22 +137,22 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
   }
 
   return (
-    <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
+    <main className="min-h-screen bg-[#FAF8F5] text-[#111111]">
       {/* Top Hero */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
+      <section className="pt-32 pb-20 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-[#D9D2C5]/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <Link href="/technology" className="hover:text-white transition-colors">Technology</Link>
             <span>/</span>
-            <span className="text-[#1F7A8C]">{product.name}</span>
+            <span className="text-[#9E7D47]">{product.name}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
-                <Cpu className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                <Cpu className="w-3.5 h-3.5 text-[#9E7D47]" />
                 <span>{product.category}</span>
               </div>
 
@@ -169,8 +169,8 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
               </p>
             </div>
 
-            <div className="lg:col-span-4 bg-[#241B3B] p-8 rounded-2xl border border-white/15 space-y-2">
-              <span className="text-xs font-mono text-[#1F7A8C] uppercase tracking-wider block">
+            <div className="lg:col-span-4 bg-[#161514] p-8 rounded-2xl border border-white/15 space-y-2">
+              <span className="text-xs font-mono text-[#9E7D47] uppercase tracking-wider block">
                 Target Impact Benchmark
               </span>
               <div className="font-serif text-5xl sm:text-6xl font-light text-white">
@@ -190,10 +190,10 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
           
           <div className="lg:col-span-8 space-y-12">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#6B3BA6]">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#9E7D47]">
                 Operational Capabilities
               </span>
-              <h2 className="font-serif text-3xl font-light mt-1 text-[#17102A]">
+              <h2 className="font-serif text-3xl font-light mt-1 text-[#111111]">
                 Key Functional Highlights
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
@@ -202,8 +202,8 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
                     key={idx}
                     className="p-5 rounded-xl border border-[#D9D2C5] bg-white flex items-start gap-3 shadow-xs"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-[#1F7A8C] shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm font-medium text-[#17102A] leading-snug">
+                    <CheckCircle2 className="w-4 h-4 text-[#9E7D47] shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm font-medium text-[#111111] leading-snug">
                       {cap}
                     </span>
                   </div>
@@ -212,10 +212,10 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
             </div>
 
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#6B3BA6]">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#9E7D47]">
                 System Design
               </span>
-              <h2 className="font-serif text-2xl font-light mt-1 text-[#17102A]">
+              <h2 className="font-serif text-2xl font-light mt-1 text-[#111111]">
                 Technical Architecture
               </h2>
               <div className="space-y-4 mt-6">
@@ -224,10 +224,10 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
                     key={idx}
                     className="p-6 rounded-xl border border-[#D9D2C5] bg-white space-y-2"
                   >
-                    <h3 className="font-serif text-lg font-medium text-[#17102A]">
+                    <h3 className="font-serif text-lg font-medium text-[#111111]">
                       {arch.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#17102A]/70 leading-relaxed font-sans">
+                    <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed font-sans">
                       {arch.detail}
                     </p>
                   </div>
@@ -238,15 +238,15 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
 
           <div className="lg:col-span-4 space-y-8">
             <div className="p-6 rounded-xl border border-[#D9D2C5] bg-white space-y-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#17102A]/60 block">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#111111]/60 block">
                 Deployment Access
               </span>
-              <p className="text-xs text-[#17102A]/80 leading-relaxed">
+              <p className="text-xs text-[#111111]/80 leading-relaxed">
                 {product.name} is deployed exclusively as part of Growify&apos;s S.C.A.L.E. growth engagements for verified luxury commerce clients.
               </p>
               <Link
                 href="/#audit-intake"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#17102A] text-[#F5F1EA] py-3 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-[#6B3BA6] transition-colors font-medium"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#111111] text-white py-3 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-[#9E7D47] transition-colors font-medium"
               >
                 <span>Request Deployment Audit</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -254,18 +254,18 @@ export default async function TechDetailPage({ params }: TechDetailPageProps): P
             </div>
 
             <div className="p-6 rounded-xl border border-[#D9D2C5] bg-white space-y-3">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#6B3BA6] block">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#9E7D47] block">
                 Explore Technology Suite
               </span>
               <Link
                 href="/technology/lookify"
-                className="block text-sm font-serif font-medium text-[#17102A] hover:text-[#6B3BA6] transition-colors"
+                className="block text-sm font-serif font-medium text-[#111111] hover:text-[#9E7D47] transition-colors"
               >
                 • Lookify Virtual Try-On
               </Link>
               <Link
                 href="/technology/partners"
-                className="block text-sm font-serif font-medium text-[#17102A] hover:text-[#6B3BA6] transition-colors"
+                className="block text-sm font-serif font-medium text-[#111111] hover:text-[#9E7D47] transition-colors"
               >
                 • Certified Partner Ecosystem
               </Link>

@@ -27,9 +27,9 @@ export function Fact({ id, fallback, className = '', as = 'span' }: FactProps) {
     switch (status) {
       case 'verified':
         return {
-          icon: <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 inline mr-1" />,
+          icon: <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47] inline mr-1" />,
           label: '[V] Verified Public Source',
-          bgColor: 'bg-teal-50 border-teal-300 text-teal-800',
+          bgColor: 'bg-[#9E7D47]/10 border-[#9E7D47]/40 text-[#9E7D47]',
         };
       case 'supplied':
         return {
@@ -65,9 +65,9 @@ export function Fact({ id, fallback, className = '', as = 'span' }: FactProps) {
       <span>{fact.value}</span>
 
       {reviewMode && hovered && (
-        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 p-3 bg-[#17102A] text-white text-xs rounded shadow-2xl pointer-events-none border border-slate-700 text-left normal-case tracking-normal font-sans">
-          <span className="flex items-center justify-between pb-1 mb-1 border-b border-slate-700">
-            <span className="font-semibold text-[11px] uppercase tracking-wider text-teal-400">
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 p-3 bg-[#111111] text-white text-xs rounded shadow-2xl pointer-events-none border border-white/10 text-left normal-case tracking-normal font-sans">
+          <span className="flex items-center justify-between pb-1 mb-1 border-b border-white/10">
+            <span className="font-semibold text-[11px] uppercase tracking-wider text-[#9E7D47]">
               Facts Ledger Record
             </span>
             <span className={`px-1.5 py-0.5 text-[10px] font-mono rounded border ${badge.bgColor}`}>

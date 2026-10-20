@@ -81,7 +81,7 @@ export function ConversionSection(): React.JSX.Element {
   }
 
   return (
-    <section id="audit-intake" className="py-24 bg-[#120D1C] text-[#F5F1EA] relative overflow-hidden border-t border-white/10">
+    <section id="audit-intake" className="py-24 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -90,7 +90,7 @@ export function ConversionSection(): React.JSX.Element {
             <ScrollReveal animation="fade-up">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
-                  <Sparkles className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#9E7D47]" />
                   <span>Flagship Architecture Audit</span>
                 </div>
 
@@ -104,7 +104,7 @@ export function ConversionSection(): React.JSX.Element {
 
                 <div className="space-y-4 pt-4 border-t border-white/10">
                   <div className="flex items-start gap-3">
-                    <ShieldCheck className="w-5 h-5 text-[#1F7A8C] shrink-0 mt-0.5" />
+                    <ShieldCheck className="w-5 h-5 text-[#9E7D47] shrink-0 mt-0.5" />
                     <p className="text-xs text-[#D9D2C5] leading-relaxed">
                       <strong className="text-white block font-medium">Strict NDA & IP Protection</strong>
                       We never share brand revenue metrics, SKU performance, or customer logs with third parties.
@@ -112,7 +112,7 @@ export function ConversionSection(): React.JSX.Element {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-[#1F7A8C] shrink-0 mt-0.5" />
+                    <Clock className="w-5 h-5 text-[#9E7D47] shrink-0 mt-0.5" />
                     <p className="text-xs text-[#D9D2C5] leading-relaxed">
                       <strong className="text-white block font-medium">Executive Response Guarantee</strong>
                       Every audit report is reviewed by our engineering and performance directors in New Delhi.
@@ -133,7 +133,7 @@ export function ConversionSection(): React.JSX.Element {
           {/* Right Column: Interactive Progressive Form */}
           <div className="lg:col-span-7">
             <ScrollReveal animation="fade-left" delay={120}>
-              <div className="bg-[#241B3B] border border-white/15 rounded-2xl p-6 sm:p-10 shadow-2xl relative">
+              <div className="bg-[#161514] border border-white/15 rounded-2xl p-6 sm:p-10 shadow-2xl relative">
               
               {!submitted ? (
                 <div>
@@ -147,7 +147,7 @@ export function ConversionSection(): React.JSX.Element {
                         {step === 1 ? "Request Diagnostic Analysis" : "Tailor Your Audit Scope"}
                       </h3>
                     </div>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded bg-[#6B3BA6]/30 text-white border border-[#6B3BA6]/50">
+                    <span className="text-xs font-mono px-2.5 py-1 rounded bg-[#9E7D47]/20 text-[#FAF8F5] border border-[#9E7D47]/40">
                       {step === 1 ? "30 Secs" : "Final Step"}
                     </span>
                   </div>
@@ -165,7 +165,7 @@ export function ConversionSection(): React.JSX.Element {
                           value={formData.email}
                           onChange={(e) => handleFieldChange("email", e.target.value)}
                           placeholder="founder@yourluxurybrand.com"
-                          className="w-full bg-[#17102A] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#6B3BA6] transition-colors"
+                          className="w-full bg-[#0E0D0C] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#9E7D47] transition-colors"
                         />
                       </div>
 
@@ -179,7 +179,7 @@ export function ConversionSection(): React.JSX.Element {
                           value={formData.storeUrl}
                           onChange={(e) => handleFieldChange("storeUrl", e.target.value)}
                           placeholder="https://yourbrand.com or Brand Name"
-                          className="w-full bg-[#17102A] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#6B3BA6] transition-colors"
+                          className="w-full bg-[#0E0D0C] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#9E7D47] transition-colors"
                         />
                       </div>
 
@@ -190,7 +190,7 @@ export function ConversionSection(): React.JSX.Element {
                         <select
                           value={formData.revenueTier}
                           onChange={(e) => handleFieldChange("revenueTier", e.target.value)}
-                          className="w-full bg-[#17102A] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#6B3BA6] transition-colors"
+                          className="w-full bg-[#0E0D0C] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#9E7D47] transition-colors"
                         >
                           <option value="Under ₹5 Cr">Under ₹5 Cr / Launch Phase</option>
                           <option value="₹5 Cr - ₹25 Cr">₹5 Cr - ₹25 Cr (Scale Phase)</option>
@@ -201,7 +201,7 @@ export function ConversionSection(): React.JSX.Element {
 
                       <button
                         type="submit"
-                        className="w-full inline-flex items-center justify-center gap-2 bg-[#F5F1EA] text-[#17102A] font-medium px-6 py-4 rounded-lg hover:bg-white transition-all shadow-md mt-4 cursor-pointer text-sm"
+                        className="w-full inline-flex items-center justify-center gap-2 bg-[#FAF8F5] hover:bg-[#9E7D47] text-[#111111] hover:text-white font-medium px-6 py-4 rounded-lg transition-all shadow-md mt-4 cursor-pointer text-sm"
                       >
                         <span>Continue To Priority Scoping</span>
                         <ArrowRight className="w-4 h-4" />
@@ -227,7 +227,7 @@ export function ConversionSection(): React.JSX.Element {
                         <select
                           value={formData.primaryBlocker}
                           onChange={(e) => handleFieldChange("primaryBlocker", e.target.value)}
-                          className="w-full bg-[#17102A] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#6B3BA6] transition-colors"
+                          className="w-full bg-[#0E0D0C] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#9E7D47] transition-colors"
                         >
                           <option value="International Expansion (US/GCC)">International Expansion (US / GCC localization)</option>
                           <option value="Retention & Repeat VIP Lifetime Value">Retention & Repeat VIP Lifetime Value</option>
@@ -245,7 +245,7 @@ export function ConversionSection(): React.JSX.Element {
                           <select
                             value={formData.timeline}
                             onChange={(e) => handleFieldChange("timeline", e.target.value)}
-                            className="w-full bg-[#17102A] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#6B3BA6] transition-colors"
+                            className="w-full bg-[#0E0D0C] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#9E7D47] transition-colors"
                           >
                             <option value="Immediate / This Month">Immediate / This Month</option>
                             <option value="Next 30-60 Days">Next 30–60 Days</option>
@@ -262,7 +262,7 @@ export function ConversionSection(): React.JSX.Element {
                             value={formData.whatsapp}
                             onChange={(e) => handleFieldChange("whatsapp", e.target.value)}
                             placeholder="+91 98765 43210"
-                            className="w-full bg-[#17102A] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#6B3BA6] transition-colors"
+                            className="w-full bg-[#0E0D0C] border border-white/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-[#9E7D47] transition-colors"
                           />
                         </div>
                       </div>
@@ -277,7 +277,7 @@ export function ConversionSection(): React.JSX.Element {
                         </button>
                         <button
                           type="submit"
-                          className="flex-1 inline-flex items-center justify-center gap-2 bg-[#1F7A8C] text-white font-medium px-6 py-4 rounded-lg hover:bg-[#1F7A8C]/90 transition-all shadow-md text-sm cursor-pointer"
+                          className="flex-1 inline-flex items-center justify-center gap-2 bg-[#9E7D47] hover:bg-[#8C6D38] text-white font-medium px-6 py-4 rounded-lg transition-all shadow-md text-sm cursor-pointer"
                         >
                           <span>Deliver My Flagship Audit</span>
                           <CheckCircle2 className="w-4 h-4" />
@@ -289,12 +289,12 @@ export function ConversionSection(): React.JSX.Element {
               ) : (
                 /* Submission Confirmation State */
                 <div className="text-center py-8 space-y-6">
-                  <div className="w-16 h-16 bg-[#1F7A8C]/20 border border-[#1F7A8C] rounded-full flex items-center justify-center mx-auto text-[#1F7A8C]">
+                  <div className="w-16 h-16 bg-[#9E7D47]/20 border border-[#9E7D47] rounded-full flex items-center justify-center mx-auto text-[#9E7D47]">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
 
                   <div className="space-y-2">
-                    <span className="text-xs font-mono text-[#1F7A8C] uppercase tracking-widest">
+                    <span className="text-xs font-mono text-[#9E7D47] uppercase tracking-widest">
                       Audit Request Confirmed • Queue ID #GW-{Math.floor(1000 + Math.random() * 9000)}
                     </span>
                     <h3 className="font-serif text-2xl sm:text-3xl font-light text-white">
@@ -305,21 +305,21 @@ export function ConversionSection(): React.JSX.Element {
                     </p>
                   </div>
 
-                  <div className="bg-[#17102A] border border-white/10 rounded-xl p-5 text-left max-w-md mx-auto space-y-3">
+                  <div className="bg-[#0E0D0C] border border-white/10 rounded-xl p-5 text-left max-w-md mx-auto space-y-3">
                     <div className="text-xs font-mono uppercase tracking-wider text-[#D9D2C5]/70">
                       What Happens in the Next 4 Hours:
                     </div>
                     <ul className="text-xs space-y-2 text-[#D9D2C5]">
                       <li className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#1F7A8C]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#9E7D47]" />
                         <span>Core Web Vitals & Liquid render latency benchmark</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#1F7A8C]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#9E7D47]" />
                         <span>Retention & WhatsApp checkout drop-off audit</span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#1F7A8C]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#9E7D47]" />
                         <span>Multi-currency international expansion friction check</span>
                       </li>
                     </ul>
@@ -332,7 +332,7 @@ export function ConversionSection(): React.JSX.Element {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 rounded-lg border border-white/20 transition-colors"
                     >
-                      <Calendar className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#9E7D47]" />
                       <span>Book Direct CXO Briefing</span>
                     </a>
                   </div>

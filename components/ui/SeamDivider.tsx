@@ -24,9 +24,9 @@ export function SeamDivider({
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
         {variant === "cross-stitch" ? (
           <div
-            className="w-full h-1 opacity-40"
+            className="w-full h-1 opacity-35"
             style={{
-              backgroundImage: `repeating-linear-gradient(45deg, #6B3BA6 0, #6B3BA6 2px, transparent 0, transparent 8px), repeating-linear-gradient(-45deg, #1F7A8C 0, #1F7A8C 2px, transparent 0, transparent 8px)`,
+              backgroundImage: `repeating-linear-gradient(45deg, #9E7D47 0, #9E7D47 1.5px, transparent 0, transparent 8px), repeating-linear-gradient(-45deg, #8C6D38 0, #8C6D38 1.5px, transparent 0, transparent 8px)`,
             }}
           />
         ) : (
@@ -36,15 +36,15 @@ export function SeamDivider({
 
       {/* Center notch / marker */}
       {label ? (
-        <div className="relative px-4 bg-[#F5F1EA] text-[11px] font-mono tracking-widest uppercase text-[#17102A]/60 flex items-center gap-2 z-10">
-          <span className="w-1.5 h-1.5 bg-[#6B3BA6] rounded-full inline-block" />
+        <div className="relative px-4 bg-[#FAF8F5] text-[11px] font-mono tracking-widest uppercase text-[#111111]/60 flex items-center gap-2 z-10">
+          <span className="w-1.5 h-1.5 bg-[#9E7D47] rounded-full inline-block" />
           <span>{label}</span>
-          <span className="w-1.5 h-1.5 bg-[#6B3BA6] rounded-full inline-block" />
+          <span className="w-1.5 h-1.5 bg-[#9E7D47] rounded-full inline-block" />
         </div>
       ) : (
-        <div className="relative px-3 bg-[#F5F1EA] flex items-center gap-1.5 z-10">
+        <div className="relative px-3 bg-[#FAF8F5] flex items-center gap-1.5 z-10">
           <span className="w-1 h-3 border-l border-r border-[#D9D2C5] inline-block" />
-          <span className="w-1.5 h-1.5 bg-[#1F7A8C] rounded-full inline-block" />
+          <span className="w-1.5 h-1.5 bg-[#9E7D47] rounded-full inline-block" />
           <span className="w-1 h-3 border-l border-r border-[#D9D2C5] inline-block" />
         </div>
       )}

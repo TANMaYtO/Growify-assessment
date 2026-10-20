@@ -37,7 +37,7 @@ export const metadata: Metadata = {
  */
 export default function HomePage(): React.JSX.Element {
   return (
-    <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#111111]">
       {/* 1. Hero Section: Direct positioning & dual CTA */}
       <HeroSection />
 
@@ -76,6 +76,6 @@ export default function HomePage(): React.JSX.Element {
 
       {/* 11. Conversion Section: 3-field progressive intake form */}
       <ConversionSection />
-    </main>
+    </div>
   );
 }

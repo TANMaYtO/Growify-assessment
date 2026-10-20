@@ -21,13 +21,13 @@ export default function WorkPage(): React.JSX.Element {
   const publishedCases: CaseStudy[] = Object.values(caseStudies);
 
   return (
-    <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#111111]">
       {/* Page Header */}
-      <section className="pt-32 pb-20 bg-[#120D1C] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
+      <section className="pt-32 pb-20 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
-              <Trophy className="w-3.5 h-3.5 text-[#1F7A8C]" />
+              <Trophy className="w-3.5 h-3.5 text-[#9E7D47]" />
               <span>Evidence-First Portfolio</span>
             </div>
 
@@ -46,14 +46,14 @@ export default function WorkPage(): React.JSX.Element {
       <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-[#D9D2C5]">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#6B3BA6]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#9E7D47]">
               Deep-Dive Analyses
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light mt-1 text-[#17102A]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-light mt-1 text-[#111111]">
               Flagship Case Studies
             </h2>
           </div>
-          <p className="text-xs font-mono text-[#17102A]/60">
+          <p className="text-xs font-mono text-[#111111]/60">
             [V] Verified Public Study • [S] Client Deck • [P] In Progress
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function WorkPage(): React.JSX.Element {
                 className="bg-white border border-[#D9D2C5] rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12"
               >
               {/* Left Column: Visual & Headline with High-Fashion Editorial Photography */}
-              <div className="lg:col-span-5 relative text-white p-8 sm:p-12 flex flex-col justify-between overflow-hidden min-h-[400px] bg-[#17102A] group">
+              <div className="lg:col-span-5 relative text-white p-8 sm:p-12 flex flex-col justify-between overflow-hidden min-h-[400px] bg-[#0E0D0C] group">
                 {/* Background Image with Dark Luxury Vignette */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -81,7 +81,7 @@ export default function WorkPage(): React.JSX.Element {
                     <span className="text-xs font-mono px-2.5 py-1 rounded bg-black/60 backdrop-blur-xs text-[#D9D2C5] border border-white/20">
                       {cs.category}
                     </span>
-                    <span className="text-xs font-mono text-[#1F7A8C] bg-white/10 backdrop-blur-xs px-2 py-0.5 rounded border border-white/10">
+                    <span className="text-xs font-mono text-[#9E7D47] bg-white/10 backdrop-blur-xs px-2 py-0.5 rounded border border-white/10">
                       Case 0{idx + 1}
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export default function WorkPage(): React.JSX.Element {
                 </div>
 
                 <div className="pt-8 relative z-10 border-t border-white/20 mt-8">
-                  <div className="font-serif text-4xl sm:text-5xl font-light text-[#1F7A8C] drop-shadow-sm">
+                  <div className="font-serif text-4xl sm:text-5xl font-light text-[#9E7D47] drop-shadow-sm">
                     {cs.heroMetric}
                   </div>
                   <div className="text-xs font-mono text-[#D9D2C5] mt-1 uppercase tracking-wider">
@@ -110,10 +110,10 @@ export default function WorkPage(): React.JSX.Element {
               <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between space-y-8">
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#6B3BA6] mb-2">
+                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#9E7D47] mb-2">
                       The Challenge & Growth Leap
                     </h4>
-                    <p className="text-sm sm:text-base text-[#17102A]/80 leading-relaxed font-sans">
+                    <p className="text-sm sm:text-base text-[#111111]/80 leading-relaxed font-sans">
                       {cs.overview}
                     </p>
                   </div>
@@ -121,8 +121,8 @@ export default function WorkPage(): React.JSX.Element {
                   {/* Highlight Metrics */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#D9D2C5]/60">
                     {cs.metrics.slice(0, 2).map((m: MetricPoint, mIdx: number) => (
-                      <div key={mIdx} className="bg-[#F5F1EA]/60 p-4 rounded-xl border border-[#D9D2C5]/80">
-                        <div className="flex items-center justify-between text-xs font-mono text-[#17102A]/60">
+                      <div key={mIdx} className="bg-[#FAF8F5] p-4 rounded-xl border border-[#D9D2C5]/80">
+                        <div className="flex items-center justify-between text-xs font-mono text-[#111111]/60">
                           <span>{m.period}</span>
                           <span className={`px-1.5 py-0.5 rounded text-[10px] ${
                             m.status === 'verified'
@@ -132,10 +132,10 @@ export default function WorkPage(): React.JSX.Element {
                             {m.status === 'verified' ? '[V] Verified' : '[S] Supplied'}
                           </span>
                         </div>
-                        <div className="font-serif text-2xl font-light text-[#17102A] mt-2">
+                        <div className="font-serif text-2xl font-light text-[#111111] mt-2">
                           {m.value}
                         </div>
-                        <div className="text-xs text-[#17102A]/70 mt-1 line-clamp-1">
+                        <div className="text-xs text-[#111111]/70 mt-1 line-clamp-1">
                           {m.label}
                         </div>
                       </div>
@@ -147,7 +147,7 @@ export default function WorkPage(): React.JSX.Element {
                     {cs.scope.map((tag: string, tIdx: number) => (
                       <span
                         key={tIdx}
-                        className="px-2.5 py-1 rounded bg-[#F5F1EA] text-[#17102A]/80 text-[11px] font-mono border border-[#D9D2C5]"
+                        className="px-2.5 py-1 rounded bg-[#F4EFE6] text-[#111111]/80 text-[11px] font-mono border border-[#D9D2C5]"
                       >
                         {tag}
                       </span>
@@ -158,13 +158,13 @@ export default function WorkPage(): React.JSX.Element {
                 <div className="pt-6 border-t border-[#D9D2C5] flex items-center justify-between">
                   <Link
                     href={`/work/${cs.slug}`}
-                    className="inline-flex items-center gap-2 bg-[#17102A] text-white px-5 py-3 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-[#6B3BA6] transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#111111] text-white px-5 py-3 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-[#9E7D47] transition-colors"
                   >
                     <span>Read Full Architectural Breakdown</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
 
-                  <span className="text-xs font-mono text-[#17102A]/50 hidden sm:inline">
+                  <span className="text-xs font-mono text-[#111111]/50 hidden sm:inline">
                     Stack: {cs.techStack[0]}
                   </span>
                 </div>
@@ -181,21 +181,21 @@ export default function WorkPage(): React.JSX.Element {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17102A]/5 text-xs font-mono text-[#6B3BA6] border border-[#17102A]/10">
-              <Sparkles className="w-3.5 h-3.5 text-[#6B3BA6]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#111111]/5 text-xs font-mono text-[#9E7D47] border border-[#111111]/10">
+              <Sparkles className="w-3.5 h-3.5 text-[#9E7D47]" />
               <span>Pipeline & Evidence Tracking</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#17102A]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#111111]">
               Future Case Study Pipeline
             </h2>
-            <p className="text-sm text-[#17102A]/70">
+            <p className="text-sm text-[#111111]/70">
               In accordance with our strict data audit rules, these 8 candidate case studies are documented with explicit data requirements prior to public claims.
             </p>
           </div>
 
           <div className="border border-[#D9D2C5] rounded-xl overflow-x-auto shadow-xs">
             <table className="w-full text-left text-xs font-sans">
-              <thead className="bg-[#17102A] text-[#F5F1EA] font-mono uppercase tracking-wider text-[11px]">
+              <thead className="bg-[#111111] text-white font-mono uppercase tracking-wider text-[11px]">
                 <tr>
                   <th className="py-4 px-6 font-medium">Candidate Brand</th>
                   <th className="py-4 px-6 font-medium">Core Growth Theme</th>
@@ -205,20 +205,20 @@ export default function WorkPage(): React.JSX.Element {
               </thead>
               <tbody className="divide-y divide-[#D9D2C5]">
                 {pipelineCaseStudies.map((pipe: PipelineItem) => (
-                  <tr key={pipe.id} className="hover:bg-[#F5F1EA]/60 transition-colors">
-                    <td className="py-4 px-6 font-medium text-sm text-[#17102A] whitespace-nowrap">
+                  <tr key={pipe.id} className="hover:bg-[#FAF8F5]/60 transition-colors">
+                    <td className="py-4 px-6 font-medium text-sm text-[#111111] whitespace-nowrap">
                       {pipe.candidateBrand}
                     </td>
-                    <td className="py-4 px-6 text-[#17102A]/80 font-sans">
+                    <td className="py-4 px-6 text-[#111111]/80 font-sans">
                       {pipe.theme}
                     </td>
                     <td className="py-4 px-6 whitespace-nowrap">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1F7A8C]/10 text-[#1F7A8C] font-mono text-[10px] font-medium border border-[#1F7A8C]/20">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#9E7D47]/10 text-[#9E7D47] font-mono text-[10px] font-medium border border-[#9E7D47]/20">
                         <CheckCircle2 className="w-3 h-3" />
                         <span>{pipe.status}</span>
                       </span>
                     </td>
-                    <td className="py-4 px-6 text-[#17102A]/70 font-mono text-[11px]">
+                    <td className="py-4 px-6 text-[#111111]/70 font-mono text-[11px]">
                       {pipe.dataRequirements.join(" • ")}
                     </td>
                   </tr>
@@ -230,7 +230,7 @@ export default function WorkPage(): React.JSX.Element {
       </section>
 
       {/* CTA Strip */}
-      <section className="py-16 bg-[#17102A] text-[#F5F1EA] text-center">
+      <section className="py-16 bg-[#0E0D0C] text-[#FAF8F5] text-center">
         <div className="max-w-4xl mx-auto px-6 space-y-6">
           <h2 className="font-serif text-3xl sm:text-4xl font-light">
             Become our next <span className="italic font-normal">flagship case study</span>.
@@ -241,7 +241,7 @@ export default function WorkPage(): React.JSX.Element {
           <div className="pt-2">
             <Link
               href="/#audit-intake"
-              className="inline-flex items-center gap-2 bg-[#F5F1EA] text-[#17102A] px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 bg-[#FAF8F5] text-[#111111] px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors"
             >
               <span>Request Diagnostic Audit</span>
               <ArrowRight className="w-4 h-4" />
@@ -249,6 +249,6 @@ export default function WorkPage(): React.JSX.Element {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

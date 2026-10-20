@@ -56,7 +56,7 @@ const garments: GarmentOption[] = [
     name: "Heritage Bandhgala Velvet Sherwani",
     category: "Menswear Couture",
     fabric: "Micro-Velvet with Antique Brass Button Detailing",
-    color: "#17102A", // Royal Ink
+    color: "#181716", // Deep Espresso Charcoal
     accent: "Burnished Brass",
     image: "/images/lookify/sherwani_navy.jpg",
     weight: "360 g/m² Micro-Velvet",
@@ -249,11 +249,11 @@ export function LookifySimulator(): React.JSX.Element {
   }
 
   return (
-    <div className="bg-[#120D1C] text-white rounded-3xl border border-white/15 p-6 sm:p-10 shadow-2xl overflow-hidden relative">
+    <div className="bg-[#0E0D0C] text-white rounded-3xl border border-white/10 p-6 sm:p-10 shadow-2xl overflow-hidden relative">
       {/* Header bar */}
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-white/10 gap-4">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1F7A8C]/20 text-[#1F7A8C] text-xs font-mono border border-[#1F7A8C]/40 mb-2.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#9E7D47]/15 text-[#9E7D47] text-xs font-mono border border-[#9E7D47]/30 mb-2.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Lookify Neural Engine v2.4 • Edge WebGL Accelerated</span>
           </div>
@@ -277,7 +277,7 @@ export function LookifySimulator(): React.JSX.Element {
           )}
 
           <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-[#D9D2C5]">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#9E7D47] animate-pulse" />
             <span>Telemetry Live</span>
           </div>
         </div>
@@ -295,7 +295,7 @@ export function LookifySimulator(): React.JSX.Element {
               <label className="text-xs font-mono uppercase tracking-wider text-[#D9D2C5]">
                 1. Select Couture Silhouette:
               </label>
-              <span className="text-[10px] font-mono text-[#1F7A8C]">3 Ingested Pieces</span>
+              <span className="text-[10px] font-mono text-[#9E7D47]">3 Ingested Pieces</span>
             </div>
 
             <div className="space-y-2.5">
@@ -311,7 +311,7 @@ export function LookifySimulator(): React.JSX.Element {
                     }}
                     className={`group w-full text-left p-3 rounded-xl border transition-all text-xs font-sans cursor-pointer flex items-center gap-3 ${
                       isSelected
-                        ? "bg-[#241B3B] border-[#1F7A8C] text-white shadow-xl ring-1 ring-[#1F7A8C]"
+                        ? "bg-[#181716] border-[#9E7D47] text-white shadow-xl ring-1 ring-[#9E7D47]"
                         : "bg-white/5 border-white/10 text-[#D9D2C5] hover:bg-white/10"
                     }`}
                   >
@@ -335,7 +335,7 @@ export function LookifySimulator(): React.JSX.Element {
                           {g.name}
                         </span>
                         {isSelected && (
-                          <span className="text-[10px] font-mono text-[#1F7A8C] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#1F7A8C]/20 border border-[#1F7A8C]/30 shrink-0 ml-1">
+                          <span className="text-[10px] font-mono text-[#9E7D47] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#9E7D47]/15 border border-[#9E7D47]/30 shrink-0 ml-1">
                             Active
                           </span>
                         )}
@@ -375,12 +375,12 @@ export function LookifySimulator(): React.JSX.Element {
                     }}
                     className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
                       isSelected
-                        ? "bg-[#241B3B] border-[#1F7A8C] text-white ring-1 ring-[#1F7A8C] shadow-lg"
+                        ? "bg-[#181716] border-[#9E7D47] text-white ring-1 ring-[#9E7D47] shadow-lg"
                         : "bg-white/5 border-white/10 text-[#D9D2C5] hover:bg-white/10"
                     }`}
                   >
                     <div className="text-xs font-mono font-medium text-white">{m.label.split(" ")[2]}</div>
-                    <div className="text-[11px] font-serif text-[#1F7A8C] mt-0.5">{m.height}</div>
+                    <div className="text-[11px] font-serif text-[#9E7D47] mt-0.5">{m.height}</div>
                     <div className="text-[10px] text-[#D9D2C5]/70 mt-0.5 font-mono">{m.bustWaistHip}</div>
                   </button>
                 );
@@ -399,7 +399,7 @@ export function LookifySimulator(): React.JSX.Element {
                 onClick={() => setViewMode("vto")}
                 className={`p-2.5 rounded-lg border text-xs font-mono flex flex-col items-center gap-1.5 transition-all cursor-pointer ${
                   viewMode === "vto"
-                    ? "bg-[#1F7A8C] border-[#1F7A8C] text-white font-semibold shadow-md"
+                    ? "bg-[#9E7D47] border-[#9E7D47] text-[#0E0D0C] font-semibold shadow-md"
                     : "bg-white/5 border-white/10 text-[#D9D2C5] hover:bg-white/10"
                 }`}
               >
@@ -411,7 +411,7 @@ export function LookifySimulator(): React.JSX.Element {
                 onClick={() => setViewMode("mesh")}
                 className={`p-2.5 rounded-lg border text-xs font-mono flex flex-col items-center gap-1.5 transition-all cursor-pointer ${
                   viewMode === "mesh"
-                    ? "bg-[#1F7A8C] border-[#1F7A8C] text-white font-semibold shadow-md"
+                    ? "bg-[#9E7D47] border-[#9E7D47] text-[#0E0D0C] font-semibold shadow-md"
                     : "bg-white/5 border-white/10 text-[#D9D2C5] hover:bg-white/10"
                 }`}
               >
@@ -423,7 +423,7 @@ export function LookifySimulator(): React.JSX.Element {
                 onClick={() => setViewMode("heatmap")}
                 className={`p-2.5 rounded-lg border text-xs font-mono flex flex-col items-center gap-1.5 transition-all cursor-pointer ${
                   viewMode === "heatmap"
-                    ? "bg-[#1F7A8C] border-[#1F7A8C] text-white font-semibold shadow-md"
+                    ? "bg-[#9E7D47] border-[#9E7D47] text-[#0E0D0C] font-semibold shadow-md"
                     : "bg-white/5 border-white/10 text-[#D9D2C5] hover:bg-white/10"
                 }`}
               >
@@ -435,7 +435,7 @@ export function LookifySimulator(): React.JSX.Element {
                 onClick={() => setViewMode("fabric")}
                 className={`p-2.5 rounded-lg border text-xs font-mono flex flex-col items-center gap-1.5 transition-all cursor-pointer ${
                   viewMode === "fabric"
-                    ? "bg-[#1F7A8C] border-[#1F7A8C] text-white font-semibold shadow-md"
+                    ? "bg-[#9E7D47] border-[#9E7D47] text-[#0E0D0C] font-semibold shadow-md"
                     : "bg-white/5 border-white/10 text-[#D9D2C5] hover:bg-white/10"
                 }`}
               >
@@ -453,7 +453,7 @@ export function LookifySimulator(): React.JSX.Element {
               className={`w-full py-4 rounded-xl font-mono text-xs uppercase tracking-widest font-semibold inline-flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-md ${
                 isDraping
                   ? "bg-white/10 text-[#D9D2C5] cursor-not-allowed"
-                  : "bg-[#1F7A8C] hover:bg-[#176675] text-white border border-[#1F7A8C]/60 hover:shadow-lg"
+                  : "bg-[#9E7D47] hover:bg-[#8C6D38] text-[#0E0D0C] border border-[#9E7D47]/60 hover:shadow-lg"
               }`}
             >
               {isDraping ? (
@@ -478,7 +478,7 @@ export function LookifySimulator(): React.JSX.Element {
           {/* Ephemeral Privacy Commitment */}
           <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1.5 text-[11px] text-[#D9D2C5]/80 font-sans">
             <div className="flex items-center gap-2 text-white font-mono text-xs">
-              <ShieldCheck className="w-4 h-4 text-[#1F7A8C] shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#9E7D47] shrink-0" />
               <span className="font-medium">Ephemeral Biometric Memory Assurance</span>
             </div>
             <p className="leading-relaxed">
@@ -490,7 +490,7 @@ export function LookifySimulator(): React.JSX.Element {
 
         {/* Right Interactive Visual Canvas (7 Cols) */}
         <div className="lg:col-span-7">
-          <div className="bg-[#090511] rounded-3xl border border-white/15 p-4 sm:p-6 relative overflow-hidden shadow-2xl flex flex-col justify-between min-h-[580px]">
+          <div className="bg-[#0E0D0C] rounded-3xl border border-white/10 p-4 sm:p-6 relative overflow-hidden shadow-2xl flex flex-col justify-between min-h-[580px]">
             
             {/* Top Canvas Telemetry HUD */}
             <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-white/10 text-xs font-mono text-[#D9D2C5] z-20">
@@ -509,7 +509,7 @@ export function LookifySimulator(): React.JSX.Element {
               </div>
 
               <div className="flex items-center gap-3 text-[11px]">
-                <span className="text-[#1F7A8C]">Latency: 2.74s</span>
+                <span className="text-[#9E7D47]">Latency: 2.74s</span>
                 <span>•</span>
                 <span>Model: {selectedModel.label}</span>
               </div>
@@ -557,7 +557,7 @@ export function LookifySimulator(): React.JSX.Element {
                     {/* Clean Shadow Falloff */}
                     <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
-                    <div className="absolute top-3 right-3 bg-[#1F7A8C] px-2.5 py-1 rounded text-[10px] font-mono text-white border border-white/20">
+                    <div className="absolute top-3 right-3 bg-[#9E7D47] px-2.5 py-1 rounded text-[10px] font-mono text-[#0E0D0C] font-semibold border border-white/20">
                       Lookify Neural Drape
                     </div>
                   </div>
@@ -567,7 +567,7 @@ export function LookifySimulator(): React.JSX.Element {
                     className="absolute top-0 bottom-0 w-0.5 bg-white cursor-ew-resize z-30 flex items-center justify-center"
                     style={{ left: `${sliderPosition}%` }}
                   >
-                    <div className="w-8 h-8 -ml-4 rounded-full bg-[#1F7A8C] border-2 border-white shadow-2xl flex items-center justify-center text-white text-xs font-bold hover:scale-110 transition-transform">
+                    <div className="w-8 h-8 -ml-4 rounded-full bg-[#9E7D47] border-2 border-white shadow-2xl flex items-center justify-center text-[#0E0D0C] text-xs font-bold hover:scale-110 transition-transform">
                       <Split className="w-4 h-4" />
                     </div>
                   </div>
@@ -583,7 +583,7 @@ export function LookifySimulator(): React.JSX.Element {
               {/* MODE 2: 24-POINT NEURAL LANDMARK MESH TOPOLOGY */}
               {/* ========================================================= */}
               {viewMode === "mesh" && (
-                <div className="relative w-full h-full bg-[#0D0817]">
+                <div className="relative w-full h-full bg-[#0E0D0C]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={selectedModel.image}
@@ -596,95 +596,95 @@ export function LookifySimulator(): React.JSX.Element {
                     {/* Torso & Shoulder Triangles */}
                     <polygon
                       points="50%,19% 39%,22% 43%,29%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.15"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                       strokeDasharray="2 2"
                     />
                     <polygon
                       points="50%,19% 61%,22% 57%,29%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.15"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                       strokeDasharray="2 2"
                     />
                     <polygon
                       points="43%,29% 57%,29% 50%,31%"
-                      fill="#6B3BA6"
+                      fill="#B89758"
                       fillOpacity="0.2"
-                      stroke="#6B3BA6"
+                      stroke="#B89758"
                       strokeWidth="1"
                     />
 
                     {/* Ribcage & Waist Triangulation */}
                     <polygon
                       points="43%,29% 50%,31% 42%,43%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.1"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                     />
                     <polygon
                       points="57%,29% 50%,31% 58%,43%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.1"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                     />
                     <polygon
                       points="42%,43% 58%,43% 50%,45%"
-                      fill="#6B3BA6"
+                      fill="#B89758"
                       fillOpacity="0.15"
-                      stroke="#6B3BA6"
+                      stroke="#B89758"
                       strokeWidth="1"
                     />
 
                     {/* Pelvic Belt to Hem Sweep */}
                     <polygon
                       points="42%,43% 50%,45% 40%,52%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.1"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                     />
                     <polygon
                       points="58%,43% 50%,45% 60%,52%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.1"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                     />
                     <polygon
                       points="40%,52% 60%,52% 38%,61%"
-                      fill="#6B3BA6"
+                      fill="#B89758"
                       fillOpacity="0.12"
-                      stroke="#6B3BA6"
+                      stroke="#B89758"
                       strokeWidth="1"
                     />
                     <polygon
                       points="60%,52% 38%,61% 62%,61%"
-                      fill="#6B3BA6"
+                      fill="#B89758"
                       fillOpacity="0.12"
-                      stroke="#6B3BA6"
+                      stroke="#B89758"
                       strokeWidth="1"
                     />
 
                     {/* Lower Flare Wireframe */}
                     <polygon
                       points="38%,61% 62%,61% 28%,92%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.08"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                       strokeDasharray="3 3"
                     />
                     <polygon
                       points="62%,61% 28%,92% 72%,92%"
-                      fill="#1F7A8C"
+                      fill="#9E7D47"
                       fillOpacity="0.08"
-                      stroke="#1F7A8C"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                       strokeDasharray="3 3"
                     />
@@ -701,8 +701,8 @@ export function LookifySimulator(): React.JSX.Element {
                         style={{ left: `${pt.x}%`, top: `${pt.y}%` }}
                         className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full transition-all cursor-pointer z-30 ${
                           isHovered
-                            ? "w-4 h-4 bg-emerald-400 ring-4 ring-emerald-400/40 scale-125"
-                            : "w-2.5 h-2.5 bg-[#1F7A8C] border border-white hover:scale-125"
+                            ? "w-4 h-4 bg-[#B89758] ring-4 ring-[#9E7D47]/40 scale-125"
+                            : "w-2.5 h-2.5 bg-[#9E7D47] border border-white hover:scale-125"
                         }`}
                         title={pt.name}
                       />
@@ -711,7 +711,7 @@ export function LookifySimulator(): React.JSX.Element {
 
                   {/* Active Landmark Readout Overlay */}
                   <div className="absolute top-4 left-4 right-4 bg-black/85 backdrop-blur-md rounded-xl p-3 border border-white/20 text-xs font-mono space-y-1 z-30">
-                    <div className="flex items-center justify-between text-[#1F7A8C]">
+                    <div className="flex items-center justify-between text-[#9E7D47]">
                       <span>{activeLandmark ? activeLandmark.name : "Hover any point on mesh"}</span>
                       <span>{activeLandmark ? activeLandmark.tension : "24 Anchors"}</span>
                     </div>
@@ -728,7 +728,7 @@ export function LookifySimulator(): React.JSX.Element {
               {/* MODE 3: FINITE-ELEMENT TENSION HEATMAP */}
               {/* ========================================================= */}
               {viewMode === "heatmap" && (
-                <div className="relative w-full h-full bg-[#0D0817]">
+                <div className="relative w-full h-full bg-[#0E0D0C]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={selectedGarment.image}
@@ -745,9 +745,9 @@ export function LookifySimulator(): React.JSX.Element {
                       width="40%"
                       height="12%"
                       rx="6"
-                      fill="#F59E0B"
+                      fill="#9E7D47"
                       fillOpacity="0.14"
-                      stroke="#F59E0B"
+                      stroke="#9E7D47"
                       strokeWidth="1"
                       strokeDasharray="4 3"
                     />
@@ -758,49 +758,49 @@ export function LookifySimulator(): React.JSX.Element {
                       width="34%"
                       height="10%"
                       rx="4"
-                      fill="#10B981"
+                      fill="#B89758"
                       fillOpacity="0.16"
-                      stroke="#10B981"
+                      stroke="#B89758"
                       strokeWidth="1.2"
                     />
                     {/* Hemline Flare Sweep Zone */}
                     <polygon
                       points="35%,54% 65%,54% 75%,88% 25%,88%"
-                      fill="#06B6D4"
+                      fill="#8C6D38"
                       fillOpacity="0.12"
-                      stroke="#06B6D4"
+                      stroke="#8C6D38"
                       strokeWidth="1"
                       strokeDasharray="5 3"
                     />
                   </svg>
 
                   {/* Tension Hotspot Indicators */}
-                  <div className="absolute top-[26%] left-[32%] right-[32%] py-1 px-2 rounded bg-[#17102A]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-amber-400 z-20">
+                  <div className="absolute top-[26%] left-[32%] right-[32%] py-1 px-2 rounded bg-[#161514]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-[#9E7D47] z-20">
                     Bust Contour: 99.4% (1.2% Strain)
                   </div>
 
-                  <div className="absolute top-[41%] left-[34%] right-[34%] py-1 px-2 rounded bg-[#17102A]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-emerald-400 z-20">
+                  <div className="absolute top-[41%] left-[34%] right-[34%] py-1 px-2 rounded bg-[#161514]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-[#B89758] z-20">
                     Waist Cinch: 98.7% Optimal
                   </div>
 
-                  <div className="absolute top-[75%] left-[28%] right-[28%] py-1 px-2 rounded bg-[#17102A]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-cyan-400 z-20">
+                  <div className="absolute top-[75%] left-[28%] right-[28%] py-1 px-2 rounded bg-[#161514]/90 backdrop-blur-xs text-[#D9D2C5] text-[9px] font-mono font-medium text-center border border-[#8C6D38] z-20">
                     Hem Sweep: +8.4cm Fluid Flare
                   </div>
 
                   {/* Heatmap Legend */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-[#17102A]/95 backdrop-blur-md rounded-xl p-3 border border-white/20 text-[10px] font-mono space-y-2 z-20">
+                  <div className="absolute bottom-4 left-4 right-4 bg-[#161514]/95 backdrop-blur-md rounded-xl p-3 border border-white/20 text-[10px] font-mono space-y-2 z-20">
                     <div className="text-white font-medium">Finite-Element Strain Analysis:</div>
                     <div className="flex items-center justify-between text-[9px]">
-                      <span className="flex items-center gap-1.5 text-emerald-400">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span className="flex items-center gap-1.5 text-[#B89758]">
+                        <span className="w-2 h-2 rounded-full bg-[#B89758]" />
                         <span>Bespoke Drape (&lt;1.5%)</span>
                       </span>
-                      <span className="flex items-center gap-1.5 text-amber-400">
-                        <span className="w-2 h-2 rounded-full bg-amber-400" />
+                      <span className="flex items-center gap-1.5 text-[#9E7D47]">
+                        <span className="w-2 h-2 rounded-full bg-[#9E7D47]" />
                         <span>Structured Contour (2-4%)</span>
                       </span>
-                      <span className="flex items-center gap-1.5 text-cyan-400">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                      <span className="flex items-center gap-1.5 text-[#8C6D38]">
+                        <span className="w-2 h-2 rounded-full bg-[#8C6D38]" />
                         <span>Free Falloff (0%)</span>
                       </span>
                     </div>
@@ -812,7 +812,7 @@ export function LookifySimulator(): React.JSX.Element {
               {/* MODE 4: FABRIC MICRO-TEXTURE & SPECULAR ANALYSIS */}
               {/* ========================================================= */}
               {viewMode === "fabric" && (
-                <div className="relative w-full h-full bg-[#17102A] p-6 flex flex-col justify-between">
+                <div className="relative w-full h-full bg-[#161514] p-6 flex flex-col justify-between">
                   <div className="space-y-4 z-10">
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/20 shadow-xl">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -823,9 +823,9 @@ export function LookifySimulator(): React.JSX.Element {
                       />
                       {/* Technical Optical Reticle Overlay */}
                       <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40">
-                        <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#1F7A8C" strokeWidth="1" strokeDasharray="4 4" />
-                        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#1F7A8C" strokeWidth="1" strokeDasharray="4 4" />
-                        <circle cx="50%" cy="50%" r="40" stroke="#1F7A8C" strokeWidth="1" fill="none" />
+                        <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#9E7D47" strokeWidth="1" strokeDasharray="4 4" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#9E7D47" strokeWidth="1" strokeDasharray="4 4" />
+                        <circle cx="50%" cy="50%" r="40" stroke="#9E7D47" strokeWidth="1" fill="none" />
                       </svg>
                       <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/85 text-[10px] font-mono text-white border border-white/20">
                         8x Macro Threadwork Calibration

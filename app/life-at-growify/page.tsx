@@ -23,25 +23,25 @@ export const metadata: Metadata = {
  */
 export default function LifeAtGrowifyPage(): React.JSX.Element {
   return (
-    <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
+    <main className="min-h-screen bg-[#FAF8F5] text-[#111111]">
       {/* Top Hero */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
+      <section className="pt-32 pb-20 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-[#D9D2C5]/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-[#1F7A8C]">Life at Growify</span>
+            <span className="text-[#9E7D47]">Life at Growify</span>
           </div>
 
           <ScrollReveal animation="fade-up">
             <div className="max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
-                <Building2 className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                <Building2 className="w-3.5 h-3.5 text-[#9E7D47]" />
                 <span>Interactive Campus Walkthrough</span>
               </div>
 
               <h1 className="font-serif text-4xl sm:text-6xl font-light tracking-tight leading-[1.1]">
-                Inside the studio where <span className="italic font-normal text-white">luxury flagships</span> are engineered.
+                Inside the studio where <span className="italic font-normal text-[#9E7D47]">luxury flagships</span> are engineered.
               </h1>
 
               <p className="text-base sm:text-lg text-[#D9D2C5] leading-relaxed font-sans">
@@ -50,12 +50,12 @@ export default function LifeAtGrowifyPage(): React.JSX.Element {
 
               <div className="pt-2 flex items-center gap-4 text-xs font-mono text-[#D9D2C5]/80">
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#9E7D47]" />
                   <span>Green Park / South Delhi</span>
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
-                  <Users className="w-3.5 h-3.5 text-[#6B3BA6]" />
+                  <Users className="w-3.5 h-3.5 text-[#9E7D47]" />
                   <span>35+ Full-Time Minds</span>
                 </span>
                 <span>•</span>
@@ -80,13 +80,13 @@ export default function LifeAtGrowifyPage(): React.JSX.Element {
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal animation="fade-up">
             <div className="max-w-3xl mb-16 space-y-3">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#6B3BA6]">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#9E7D47]">
                 Work Environment
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#17102A]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#111111]">
                 Craftsmanship in Every Detail
               </h2>
-              <p className="text-sm text-[#17102A]/70 font-sans">
+              <p className="text-sm text-[#111111]/70 font-sans">
                 We design our physical space with the same obsessive attention to detail that we pour into our digital flagships.
               </p>
             </div>
@@ -94,48 +94,48 @@ export default function LifeAtGrowifyPage(): React.JSX.Element {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <ScrollReveal animation="fade-up" delay={80}>
-              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#F5F1EA]/50 space-y-3 h-full">
-                <div className="w-10 h-10 rounded-lg bg-[#17102A] text-white flex items-center justify-center">
-                  <Code2 className="w-5 h-5 text-[#1F7A8C]" />
+              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#FAF8F5] space-y-3 h-full">
+                <div className="w-10 h-10 rounded-lg bg-[#0E0D0C] text-white flex items-center justify-center">
+                  <Code2 className="w-5 h-5 text-[#9E7D47]" />
                 </div>
-                <h4 className="font-serif text-lg font-medium text-[#17102A]">High-Spec Hardware</h4>
-                <p className="text-xs text-[#17102A]/70 leading-relaxed font-sans">
+                <h4 className="font-serif text-lg font-medium text-[#111111]">High-Spec Hardware</h4>
+                <p className="text-xs text-[#111111]/70 leading-relaxed font-sans">
                   Dual 4K displays, M-series Silicon, and dedicated GPU clusters for local Lookify training and model inference.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={140}>
-              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#F5F1EA]/50 space-y-3 h-full">
-                <div className="w-10 h-10 rounded-lg bg-[#17102A] text-white flex items-center justify-center">
-                  <Rocket className="w-5 h-5 text-[#6B3BA6]" />
+              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#FAF8F5] space-y-3 h-full">
+                <div className="w-10 h-10 rounded-lg bg-[#0E0D0C] text-white flex items-center justify-center">
+                  <Rocket className="w-5 h-5 text-[#9E7D47]" />
                 </div>
-                <h4 className="font-serif text-lg font-medium text-[#17102A]">Couture War Rooms</h4>
-                <p className="text-xs text-[#17102A]/70 leading-relaxed font-sans">
+                <h4 className="font-serif text-lg font-medium text-[#111111]">Couture War Rooms</h4>
+                <p className="text-xs text-[#111111]/70 leading-relaxed font-sans">
                   Dedicated collaborative war rooms equipped with real-time telemetry walls for high-stakes seasonal launch sprints.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={200}>
-              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#F5F1EA]/50 space-y-3 h-full">
-                <div className="w-10 h-10 rounded-lg bg-[#17102A] text-white flex items-center justify-center">
-                  <Coffee className="w-5 h-5 text-[#1F7A8C]" />
+              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#FAF8F5] space-y-3 h-full">
+                <div className="w-10 h-10 rounded-lg bg-[#0E0D0C] text-white flex items-center justify-center">
+                  <Coffee className="w-5 h-5 text-[#9E7D47]" />
                 </div>
-                <h4 className="font-serif text-lg font-medium text-[#17102A]">Artisanal Fuel</h4>
-                <p className="text-xs text-[#17102A]/70 leading-relaxed font-sans">
+                <h4 className="font-serif text-lg font-medium text-[#111111]">Artisanal Fuel</h4>
+                <p className="text-xs text-[#111111]/70 leading-relaxed font-sans">
                   Unlimited specialty estate coffees, healthy daily meals, and a fully stocked studio kitchen to keep minds sharp.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={260}>
-              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#F5F1EA]/50 space-y-3 h-full">
-                <div className="w-10 h-10 rounded-lg bg-[#17102A] text-white flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-[#6B3BA6]" />
+              <div className="p-6 rounded-xl border border-[#D9D2C5] bg-[#FAF8F5] space-y-3 h-full">
+                <div className="w-10 h-10 rounded-lg bg-[#0E0D0C] text-white flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-[#9E7D47]" />
                 </div>
-                <h4 className="font-serif text-lg font-medium text-[#17102A]">Learning Stipends</h4>
-                <p className="text-xs text-[#17102A]/70 leading-relaxed font-sans">
+                <h4 className="font-serif text-lg font-medium text-[#111111]">Learning Stipends</h4>
+                <p className="text-xs text-[#111111]/70 leading-relaxed font-sans">
                   Annual budget for conference travel, machine learning research papers, design publications, and advanced certifications.
                 </p>
               </div>
@@ -147,9 +147,9 @@ export default function LifeAtGrowifyPage(): React.JSX.Element {
       {/* Careers Teaser */}
       <section className="py-20 max-w-7xl mx-auto px-6">
         <ScrollReveal animation="fade-up" delay={100}>
-          <div className="bg-[#17102A] text-white rounded-2xl p-8 sm:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="bg-[#0E0D0C] text-white rounded-2xl p-8 sm:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-xl">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#1F7A8C]">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#9E7D47]">
                 Join the Engineering Studio
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl font-light">
@@ -162,7 +162,7 @@ export default function LifeAtGrowifyPage(): React.JSX.Element {
 
             <Link
               href="/careers"
-              className="inline-flex items-center gap-2 bg-[#F5F1EA] text-[#17102A] px-6 py-3.5 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-white transition-colors font-medium whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#FAF8F5] text-[#111111] px-6 py-3.5 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-white transition-colors font-medium whitespace-nowrap"
             >
               <span>Explore 5 Open Roles</span>
               <ArrowRight className="w-3.5 h-3.5" />

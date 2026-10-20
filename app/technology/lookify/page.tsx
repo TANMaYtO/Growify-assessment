@@ -23,21 +23,21 @@ export const metadata: Metadata = {
  */
 export default function LookifyPage(): React.JSX.Element {
   return (
-    <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#111111]">
       {/* Top Breadcrumb & Hero */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
+      <section className="pt-32 pb-20 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-[#D9D2C5]/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
             <Link href="/technology" className="hover:text-white transition-colors">Technology</Link>
             <span>/</span>
-            <span className="text-[#1F7A8C]">Lookify</span>
+            <span className="text-[#9E7D47]">Lookify</span>
           </div>
 
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
-              <Sparkles className="w-3.5 h-3.5 text-[#1F7A8C]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#9E7D47]" />
               <span>Proprietary Computer Vision Platform • lookify.ai</span>
             </div>
 
@@ -52,7 +52,7 @@ export default function LookifyPage(): React.JSX.Element {
             <div className="pt-4 flex flex-wrap gap-4">
               <a
                 href="#simulator"
-                className="inline-flex items-center gap-2 bg-[#F5F1EA] text-[#17102A] px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors"
+                className="inline-flex items-center gap-2 bg-[#FAF8F5] text-[#111111] px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-white transition-colors"
               >
                 <span>Launch Interactive Simulator</span>
                 <ArrowRight className="w-4 h-4" />
@@ -71,13 +71,13 @@ export default function LookifyPage(): React.JSX.Element {
       {/* Simulator Section */}
       <section id="simulator" className="py-20 max-w-7xl mx-auto px-6">
         <div className="mb-10 text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#6B3BA6]">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#9E7D47]">
             Live Proof of Concept
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#17102A]">
+          <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#111111]">
             Experience Neural Garment Draping
           </h2>
-          <p className="text-sm text-[#17102A]/70 font-sans">
+          <p className="text-sm text-[#111111]/70 font-sans">
             Test how Lookify reconciles complex handcrafted bridal embroidery with variable customer silhouettes in real time.
           </p>
         </div>
@@ -91,44 +91,44 @@ export default function LookifyPage(): React.JSX.Element {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mb-16 space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#6B3BA6]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#9E7D47]">
               Deep Tech
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#17102A]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#111111]">
               Under the Hood of Lookify
             </h2>
-            <p className="text-sm text-[#17102A]/70 font-sans">
+            <p className="text-sm text-[#111111]/70 font-sans">
               Unlike generic sticker-overlay apps, Lookify performs physics-aware garment deformation and surface lighting synthesis.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-xl border border-[#D9D2C5] bg-[#F5F1EA]/50 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-[#17102A] text-white flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-[#1F7A8C]" />
+            <div className="p-8 rounded-xl border border-[#D9D2C5] bg-[#FAF8F5]/50 space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-[#0E0D0C] text-white flex items-center justify-center">
+                <Cpu className="w-5 h-5 text-[#9E7D47]" />
               </div>
-              <h3 className="font-serif text-xl font-medium text-[#17102A]">24-Point Keypoint Estimation</h3>
-              <p className="text-xs sm:text-sm text-[#17102A]/70 leading-relaxed font-sans">
+              <h3 className="font-serif text-xl font-medium text-[#111111]">24-Point Keypoint Estimation</h3>
+              <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed font-sans">
                 Estimates shoulder width, bust apex, waist circumference, and posture pitch to calculate exact three-dimensional proportions from a single standard photograph.
               </p>
             </div>
 
-            <div className="p-8 rounded-xl border border-[#D9D2C5] bg-[#F5F1EA]/50 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-[#17102A] text-white flex items-center justify-center">
-                <Zap className="w-5 h-5 text-[#6B3BA6]" />
+            <div className="p-8 rounded-xl border border-[#D9D2C5] bg-[#FAF8F5]/50 space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-[#0E0D0C] text-white flex items-center justify-center">
+                <Zap className="w-5 h-5 text-[#9E7D47]" />
               </div>
-              <h3 className="font-serif text-xl font-medium text-[#17102A]">Neural Fabric Deformation</h3>
-              <p className="text-xs sm:text-sm text-[#17102A]/70 leading-relaxed font-sans">
+              <h3 className="font-serif text-xl font-medium text-[#111111]">Neural Fabric Deformation</h3>
+              <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed font-sans">
                 Trained specifically on heavy Indian textile weights — raw silk, velvet, organza, and brocade — simulating real fabric drape rather than flat 2D stretching.
               </p>
             </div>
 
-            <div className="p-8 rounded-xl border border-[#D9D2C5] bg-[#F5F1EA]/50 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-[#17102A] text-white flex items-center justify-center">
-                <Lock className="w-5 h-5 text-[#1F7A8C]" />
+            <div className="p-8 rounded-xl border border-[#D9D2C5] bg-[#FAF8F5]/50 space-y-4">
+              <div className="w-10 h-10 rounded-lg bg-[#0E0D0C] text-white flex items-center justify-center">
+                <Lock className="w-5 h-5 text-[#9E7D47]" />
               </div>
-              <h3 className="font-serif text-xl font-medium text-[#17102A]">Edge WebGL Latency</h3>
-              <p className="text-xs sm:text-sm text-[#17102A]/70 leading-relaxed font-sans">
+              <h3 className="font-serif text-xl font-medium text-[#111111]">Edge WebGL Latency</h3>
+              <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed font-sans">
                 Compiles directly to WebAssembly and WebGL shaders, running inference directly on consumer mobile devices with zero server roundtrip lag.
               </p>
             </div>
@@ -138,9 +138,9 @@ export default function LookifyPage(): React.JSX.Element {
 
       {/* Privacy & Compliance Section */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="bg-[#17102A] text-white rounded-2xl p-8 sm:p-12 border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-[#0E0D0C] text-white rounded-2xl p-8 sm:p-12 border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 text-xs font-mono text-[#1F7A8C] uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-[#9E7D47] uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
               <span>Biometric Privacy & Data Ethics</span>
             </div>
@@ -152,11 +152,11 @@ export default function LookifyPage(): React.JSX.Element {
             </p>
             <div className="flex flex-wrap gap-4 pt-2 text-xs font-mono text-[#D9D2C5]/80">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
                 <span>Indian DPDP Act 2023 Compliant</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
                 <span>GDPR Ephemeral Processing</span>
               </span>
             </div>
@@ -165,7 +165,7 @@ export default function LookifyPage(): React.JSX.Element {
           <div className="lg:col-span-4 text-center lg:text-right">
             <Link
               href="/#audit-intake"
-              className="inline-flex items-center gap-2 bg-[#F5F1EA] text-[#17102A] px-6 py-3.5 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-white transition-colors font-medium"
+              className="inline-flex items-center gap-2 bg-[#FAF8F5] text-[#111111] px-6 py-3.5 rounded-lg text-xs font-mono uppercase tracking-wider hover:bg-white transition-colors font-medium"
             >
               <span>Apply For Brand Pilot</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -175,6 +175,6 @@ export default function LookifyPage(): React.JSX.Element {
       </section>
 
       <SeamDivider variant="running-stitch" />
-    </main>
+    </div>
   );
 }

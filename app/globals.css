@@ -2,14 +2,14 @@
 
 @layer base {
   :root {
-    --bg-bone: #F5F1EA;
-    --text-ink: #17102A;
-    --brand-violet: #6B3BA6;
-    --brand-violet-dark: #3F304D;
-    --accent-teal: #1F7A8C;
-    --border-stone: #D9D2C5;
-    --surface-mist: #EFEAE1;
-    --surface-card: #FAF7F2;
+    --bg-bone: #FAF8F5;
+    --text-ink: #111111;
+    --brand-violet: #9E7D47;
+    --brand-violet-dark: #1E1C1A;
+    --accent-teal: #8C6D38;
+    --border-stone: #E5DFC9;
+    --surface-mist: #F4EFE6;
+    --surface-card: #FAF8F5;
   }
 
   body {
@@ -44,12 +44,12 @@
 /* Review Mode Underlines & Badges */
 .review-mode-active [data-fact-id] {
   position: relative;
-  border-bottom: 2px dashed #1F7A8C;
+  border-bottom: 2px dashed #9E7D47;
   cursor: help;
 }
 
 .review-mode-active [data-fact-status="verified"] {
-  border-bottom-color: #1F7A8C;
+  border-bottom-color: #9E7D47;
 }
 
 .review-mode-active [data-fact-status="supplied"] {
@@ -62,7 +62,7 @@
 }
 
 .review-mode-active [data-fact-status="placeholder"] {
-  border-bottom-color: #6B7280;
+  border-bottom-color: #8C867E;
   border-bottom-style: dotted;
 }
 

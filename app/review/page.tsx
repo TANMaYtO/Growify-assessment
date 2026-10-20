@@ -24,20 +24,20 @@ export default function ReviewPage(): React.JSX.Element {
   const pendingCount = factList.filter((f) => f.status === "pending-validation").length;
 
   return (
-    <main className="min-h-screen bg-[#F5F1EA] text-[#17102A]">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#111111]">
       {/* Top Hero */}
-      <section className="pt-32 pb-20 bg-[#17102A] text-[#F5F1EA] relative overflow-hidden border-b border-white/10">
+      <section className="pt-32 pb-20 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-[#D9D2C5]/70">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-[#1F7A8C]">Validation Ledger</span>
+            <span className="text-[#9E7D47]">Validation Ledger</span>
           </div>
 
           <ScrollReveal animation="fade-up">
             <div className="max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-[#D9D2C5] border border-white/15">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#1F7A8C]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#9E7D47]" />
                 <span>Evidence-First Operating Standard</span>
               </div>
 
@@ -73,23 +73,23 @@ export default function ReviewPage(): React.JSX.Element {
       <section className="py-12 bg-white border-b border-[#D9D2C5]">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal animation="fade-up">
-            <div className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="bg-[#FAF8F5] border border-[#D9D2C5] rounded-xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="space-y-2 max-w-2xl">
-                <div className="inline-flex items-center gap-1.5 text-xs font-mono text-[#6B3BA6] uppercase tracking-wider font-medium">
+                <div className="inline-flex items-center gap-1.5 text-xs font-mono text-[#9E7D47] uppercase tracking-wider font-medium">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Built-in Auditor Tooling</span>
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl font-light text-[#17102A]">
+                <h3 className="font-serif text-xl sm:text-2xl font-light text-[#111111]">
                   Toggle &ldquo;Review Mode&rdquo; on any page
                 </h3>
-                <p className="text-xs sm:text-sm text-[#17102A]/80 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-[#111111]/80 leading-relaxed font-sans">
                   Use the floating toolbar in the bottom-right corner of your screen to activate Review Mode. It overlays interactive inspection tooltips on every single claim, source link, and verification badge across the prototype.
                 </p>
               </div>
 
               <Link
                 href="/"
-                className="px-5 py-3 rounded-lg bg-[#17102A] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#6B3BA6] transition-colors whitespace-nowrap"
+                className="px-5 py-3 rounded-lg bg-[#111111] text-white text-xs font-mono uppercase tracking-wider hover:bg-[#9E7D47] transition-colors whitespace-nowrap"
               >
                 Inspect Homepage in Review Mode
               </Link>
@@ -102,13 +102,13 @@ export default function ReviewPage(): React.JSX.Element {
       <section className="py-20 max-w-7xl mx-auto px-6">
         <ScrollReveal animation="fade-up">
           <div className="max-w-3xl mb-12 space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#6B3BA6]">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#9E7D47]">
               Single Source of Truth
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#17102A]">
+            <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#111111]">
               Metrics Single Source of Truth
             </h2>
-            <p className="text-sm text-[#17102A]/70 font-sans">
+            <p className="text-sm text-[#111111]/70 font-sans">
               Exported from <code>content/facts.ts</code>. Governed by zero-unverified-claims build linters.
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function ReviewPage(): React.JSX.Element {
           <div className="border border-[#D9D2C5] rounded-2xl overflow-hidden bg-white shadow-xs">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs font-sans">
-                <thead className="bg-[#17102A] text-[#F5F1EA] font-mono uppercase tracking-wider text-[11px]">
+                <thead className="bg-[#111111] text-white font-mono uppercase tracking-wider text-[11px]">
                   <tr>
                     <th className="py-4 px-6 font-medium">Metric ID</th>
                     <th className="py-4 px-6 font-medium">Published Value</th>
@@ -127,16 +127,16 @@ export default function ReviewPage(): React.JSX.Element {
                 </thead>
                 <tbody className="divide-y divide-[#D9D2C5]">
                   {factList.map((fact: Fact) => (
-                    <tr key={fact.id} className="hover:bg-[#F5F1EA]/60 transition-colors">
-                      <td className="py-4 px-6 font-mono text-[11px] text-[#6B3BA6] whitespace-nowrap font-medium">
+                    <tr key={fact.id} className="hover:bg-[#FAF8F5]/60 transition-colors">
+                      <td className="py-4 px-6 font-mono text-[11px] text-[#9E7D47] whitespace-nowrap font-medium">
                         {fact.id}
                       </td>
-                      <td className="py-4 px-6 font-serif text-base font-medium text-[#17102A] whitespace-nowrap">
+                      <td className="py-4 px-6 font-serif text-base font-medium text-[#111111] whitespace-nowrap">
                         {fact.value}
                       </td>
-                      <td className="py-4 px-6 text-[#17102A]/80 max-w-xs font-sans">
-                        <strong className="block text-xs font-medium text-[#17102A] mb-0.5">{fact.statement}</strong>
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#F5F1EA] text-[#17102A]/70 uppercase tracking-wider inline-block mt-1">
+                      <td className="py-4 px-6 text-[#111111]/80 max-w-xs font-sans">
+                        <strong className="block text-xs font-medium text-[#111111] mb-0.5">{fact.statement}</strong>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#FAF8F5] text-[#111111]/70 uppercase tracking-wider inline-block mt-1">
                           Category: {fact.category}
                         </span>
                       </td>
@@ -162,8 +162,8 @@ export default function ReviewPage(): React.JSX.Element {
                           </span>
                         </span>
                       </td>
-                      <td className="py-4 px-6 text-[#17102A]/80 max-w-sm font-sans">
-                        <div className="font-mono text-[11px] text-[#17102A]/70 mb-1">
+                      <td className="py-4 px-6 text-[#111111]/80 max-w-sm font-sans">
+                        <div className="font-mono text-[11px] text-[#111111]/70 mb-1">
                           {fact.source} ({fact.sourceDate})
                         </div>
                         {fact.notes && (
@@ -187,7 +187,7 @@ export default function ReviewPage(): React.JSX.Element {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal animation="fade-up">
-            <div className="bg-[#241B3B] text-white rounded-2xl p-8 sm:p-12 border border-white/10 space-y-6">
+            <div className="bg-[#0E0D0C] text-white rounded-2xl p-8 sm:p-12 border border-white/10 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-mono border border-rose-500/30">
                 <AlertCircle className="w-3.5 h-3.5" />
                 <span>Audit Case Study • Mathematical Reconciliation</span>
@@ -213,7 +213,7 @@ export default function ReviewPage(): React.JSX.Element {
                   <p>
                     We have cataloged this metric under <code>[U] Pending Validation</code>. On the public-facing pages, it is locked behind Review Mode and clearly annotated as a likely typographical conflation of <strong>251% international sales growth</strong> with <strong>revenue share</strong>.
                   </p>
-                  <p className="text-[11px] font-mono text-[#1F7A8C]">
+                  <p className="text-[11px] font-mono text-[#9E7D47]">
                     Status: Flagged for client validation before public indexation.
                   </p>
                 </div>
@@ -224,6 +224,6 @@ export default function ReviewPage(): React.JSX.Element {
       </section>
 
       <SeamDivider variant="running-stitch" />
-    </main>
+    </div>
   );
 }

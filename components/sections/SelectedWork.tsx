@@ -13,21 +13,21 @@ export function SelectedWork() {
   const cases = Object.values(caseStudies);
 
   return (
-    <section className="py-16 md:py-24 bg-[#F5F1EA] font-sans">
+    <section className="py-16 md:py-24 bg-[#FAF8F5] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="fade-up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
             <div>
-              <span className="text-xs font-mono tracking-widest uppercase text-[#6B3BA6] block mb-2">
+              <span className="text-xs font-mono tracking-widest uppercase text-[#9E7D47] block mb-2">
                 Commercial Proof & Case Studies
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#17102A]">
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111111]">
                 Selected Commercial Engagements
               </h2>
             </div>
             <Link
               href="/work"
-              className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#17102A] hover:text-[#6B3BA6] font-semibold transition-colors pb-1 border-b border-[#17102A]"
+              className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-[#111111] hover:text-[#9E7D47] font-semibold transition-colors pb-1 border-b border-[#111111]"
             >
               <span>View All Client Archives</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -40,7 +40,7 @@ export function SelectedWork() {
           {cases.map((cs, idx) => (
             <ScrollReveal key={cs.slug} animation="fade-up" delay={idx * 140}>
               <article
-                className="bg-[#FAF7F2] border border-[#D9D2C5] rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-[#6B3BA6]/60 transition-all hover:shadow-xl group h-full"
+                className="bg-[#F7F5F0] border border-[#D9D2C5] rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-[#9E7D47]/60 transition-all hover:shadow-xl group h-full"
               >
                 <div className="space-y-4">
                   {/* Editorial Couture Image Banner with Parallax */}
@@ -64,22 +64,22 @@ export function SelectedWork() {
                   </div>
 
                   <div>
-                    <h3 className="font-display text-2xl text-[#17102A] group-hover:text-[#6B3BA6] transition-colors">
+                    <h3 className="font-display text-2xl text-[#111111] group-hover:text-[#9E7D47] transition-colors">
                       {cs.brand}
                     </h3>
-                    <p className="text-xs text-[#17102A]/70 mt-1 line-clamp-2">
+                    <p className="text-xs text-[#111111]/70 mt-1 line-clamp-2">
                       {cs.tagline}
                     </p>
                   </div>
 
                   {/* Hero Metric Callout */}
                   <div className="pt-4 pb-2 border-t border-[#D9D2C5]">
-                    <span className="block font-display text-4xl sm:text-5xl font-bold text-[#1F7A8C]">
+                    <span className="block font-display text-4xl sm:text-5xl font-bold text-[#9E7D47]">
                       {cs.slug === 'tarun-tahiliani' && <Fact id="tt-eos-growth" fallback="200%+" />}
                       {cs.slug === 'mahima-mahajan' && <Fact id="mm-aov-growth" fallback="2.54x" />}
                       {cs.slug === 'house-of-masaba' && <Fact id="masaba-scale-impact" fallback="75%" />}
                     </span>
-                    <span className="text-xs font-mono uppercase tracking-wider text-[#17102A]/60 block mt-1">
+                    <span className="text-xs font-mono uppercase tracking-wider text-[#111111]/60 block mt-1">
                       {cs.heroMetricLabel}
                     </span>
                   </div>
@@ -89,7 +89,7 @@ export function SelectedWork() {
                     {cs.scope.slice(0, 3).map((item, i) => (
                       <span
                         key={i}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#EFEAE1] text-[#17102A]/80 border border-[#D9D2C5]/70"
+                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#EFEAE1] text-[#111111]/80 border border-[#D9D2C5]/70"
                       >
                         {item}
                       </span>
@@ -100,7 +100,7 @@ export function SelectedWork() {
                 <div className="pt-6 mt-6 border-t border-[#D9D2C5]">
                   <Link
                     href={`/work/${cs.slug}`}
-                    className="w-full text-center py-2.5 px-4 bg-transparent group-hover:bg-[#17102A] border border-[#17102A] text-[#17102A] group-hover:text-white text-xs font-mono uppercase tracking-widest font-semibold rounded transition-all block"
+                    className="w-full text-center py-2.5 px-4 bg-transparent group-hover:bg-[#111111] border border-[#111111] text-[#111111] group-hover:text-white text-xs font-mono uppercase tracking-widest font-semibold rounded transition-all block"
                   >
                     Inspect Case Study
                   </Link>

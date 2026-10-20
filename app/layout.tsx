@@ -4,8 +4,6 @@ import './globals.css';
 import { ReviewProvider } from '@/components/review/ReviewContext';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
-import { ReviewToolbar } from '@/components/review/ReviewToolbar';
-import { AnalyticsDebugPanel } from '@/components/telemetry/AnalyticsDebugPanel';
 import { ScrollProgress } from '@/components/motion/ScrollProgress';
 
 const inter = Inter({
@@ -98,14 +96,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#F5F1EA] text-[#17102A]">
+      <body className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#111111]">
         {/* Top Hairline Scroll Progress Bar */}
         <ScrollProgress />
 
         {/* Skip to Content Link for Accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-[#17102A] text-white px-4 py-2 rounded text-xs font-mono uppercase"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-[#111111] text-white px-4 py-2 rounded text-xs font-mono uppercase"
         >
           Skip to main content
         </a>
@@ -116,8 +114,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <ReviewToolbar />
-          <AnalyticsDebugPanel />
         </ReviewProvider>
       </body>
     </html>

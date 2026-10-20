@@ -101,35 +101,35 @@ export function PathFinderWidget() {
   const rec = getRecommendation();
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAF7F2] border-t border-[#D9D2C5] font-sans">
+    <section className="py-16 md:py-24 bg-[#FAF8F5] border-t border-[#D9D2C5] font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="fade-up">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#EFEAE1] border border-[#D9D2C5] text-xs font-mono text-[#6B3BA6] mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#EFEAE1] border border-[#D9D2C5] text-xs font-mono text-[#9E7D47] mb-3">
               <Compass className="w-3.5 h-3.5" />
               <span>Interactive Diagnostic Widget</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl text-[#17102A] font-normal">
+            <h2 className="font-display text-3xl sm:text-4xl text-[#111111] font-normal">
               Growth Path Finder
             </h2>
-            <p className="text-xs sm:text-sm text-[#17102A]/70 mt-2">
+            <p className="text-xs sm:text-sm text-[#111111]/70 mt-2">
               Answer 3 diagnostic questions to receive a tailored commerce and growth operating stack for your brand.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={120}>
-          <div className="bg-[#F5F1EA] border border-[#D9D2C5] rounded-lg p-6 sm:p-10 shadow-sm">
+          <div className="bg-[#F7F5F0] border border-[#D9D2C5] rounded-lg p-6 sm:p-10 shadow-sm">
           {!completed ? (
             <div>
               {/* Progress Indicator */}
-              <div className="flex items-center justify-between text-xs font-mono text-[#17102A]/60 mb-6 pb-2 border-b border-[#D9D2C5]">
+              <div className="flex items-center justify-between text-xs font-mono text-[#111111]/60 mb-6 pb-2 border-b border-[#D9D2C5]">
                 <span>Step {currentStep + 1} of {questions.length}</span>
                 <span>{Math.round(((currentStep + 1) / questions.length) * 100)}% Complete</span>
               </div>
 
               {/* Question Body */}
-              <h3 className="font-display text-xl sm:text-2xl text-[#17102A] mb-6">
+              <h3 className="font-display text-xl sm:text-2xl text-[#111111] mb-6">
                 {questions[currentStep].title}
               </h3>
 
@@ -138,17 +138,17 @@ export function PathFinderWidget() {
                   <button
                     key={opt.value}
                     onClick={() => handleSelect(questions[currentStep].id, opt.value)}
-                    className="w-full text-left p-4 rounded bg-[#FAF7F2] hover:bg-white border border-[#D9D2C5] hover:border-[#6B3BA6] transition-all flex items-center justify-between group shadow-xs"
+                    className="w-full text-left p-4 rounded bg-[#FAF8F5] hover:bg-white border border-[#D9D2C5] hover:border-[#9E7D47] transition-all flex items-center justify-between group shadow-xs"
                   >
                     <div>
-                      <span className="block text-sm font-semibold text-[#17102A] group-hover:text-[#6B3BA6]">
+                      <span className="block text-sm font-semibold text-[#111111] group-hover:text-[#9E7D47]">
                         {opt.label}
                       </span>
-                      <span className="block text-xs text-[#17102A]/60 mt-0.5">
+                      <span className="block text-xs text-[#111111]/60 mt-0.5">
                         {opt.hint}
                       </span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-[#17102A]/30 group-hover:text-[#6B3BA6] shrink-0 ml-3 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4 text-[#111111]/30 group-hover:text-[#9E7D47] shrink-0 ml-3 transition-transform group-hover:translate-x-1" />
                   </button>
                 ))}
               </div>
@@ -157,37 +157,37 @@ export function PathFinderWidget() {
             /* Results Screen */
             <div className="space-y-6 animate-in fade-in duration-200">
               <div className="flex items-center justify-between pb-3 border-b border-[#D9D2C5]">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#1F7A8C]">
+                <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#9E7D47]">
                   <Sparkles className="w-4 h-4" />
                   <span>Tailored Solution Recommendation</span>
                 </div>
                 <button
                   onClick={handleReset}
-                  className="text-xs font-mono text-[#17102A]/60 hover:text-[#17102A] flex items-center gap-1"
+                  className="text-xs font-mono text-[#111111]/60 hover:text-[#111111] flex items-center gap-1"
                 >
                   <RotateCcw className="w-3.5 h-3.5" /> Reset
                 </button>
               </div>
 
               <div>
-                <span className="text-[11px] font-mono uppercase text-[#17102A]/50 block">Recommended Architecture:</span>
-                <h3 className="font-display text-2xl sm:text-3xl text-[#17102A] font-semibold mt-1">
+                <span className="text-[11px] font-mono uppercase text-[#111111]/50 block">Recommended Architecture:</span>
+                <h3 className="font-display text-2xl sm:text-3xl text-[#111111] font-semibold mt-1">
                   {rec.solution}
                 </h3>
-                <p className="text-sm text-[#17102A]/80 mt-2 leading-relaxed">
+                <p className="text-sm text-[#111111]/80 mt-2 leading-relaxed">
                   {rec.why}
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 bg-[#FAF7F2] rounded border border-[#D9D2C5]">
-                  <span className="text-[10px] font-mono uppercase text-[#17102A]/50 block">Integrated Proprietary IP:</span>
-                  <span className="text-sm font-semibold text-[#6B3BA6] block mt-1">{rec.product}</span>
+                <div className="p-4 bg-[#FAF8F5] rounded border border-[#D9D2C5]">
+                  <span className="text-[10px] font-mono uppercase text-[#111111]/50 block">Integrated Proprietary IP:</span>
+                  <span className="text-sm font-semibold text-[#9E7D47] block mt-1">{rec.product}</span>
                 </div>
 
-                <div className="p-4 bg-[#FAF7F2] rounded border border-[#D9D2C5]">
-                  <span className="text-[10px] font-mono uppercase text-[#17102A]/50 block">Precedent Case Proof:</span>
-                  <Link href={`/work/${rec.caseSlug}`} className="text-sm font-semibold text-[#1F7A8C] hover:underline block mt-1">
+                <div className="p-4 bg-[#FAF8F5] rounded border border-[#D9D2C5]">
+                  <span className="text-[10px] font-mono uppercase text-[#111111]/50 block">Precedent Case Proof:</span>
+                  <Link href={`/work/${rec.caseSlug}`} className="text-sm font-semibold text-[#9E7D47] hover:underline block mt-1">
                     {rec.caseStudy} →
                   </Link>
                 </div>
@@ -196,13 +196,13 @@ export function PathFinderWidget() {
               <div className="pt-4 flex flex-col sm:flex-row gap-3">
                 <Link
                   href={`/contact?solution=${encodeURIComponent(rec.solution)}`}
-                  className="flex-1 text-center py-3.5 bg-[#17102A] hover:bg-[#6B3BA6] text-white text-xs font-mono uppercase tracking-widest font-semibold rounded transition-colors"
+                  className="flex-1 text-center py-3.5 bg-[#111111] hover:bg-[#9E7D47] text-white text-xs font-mono uppercase tracking-widest font-semibold rounded transition-colors"
                 >
                   Book Consultation on This Stack
                 </Link>
                 <Link
                   href={`/services/${rec.serviceSlug}`}
-                  className="text-center py-3.5 px-6 border border-[#D9D2C5] hover:bg-[#EFEAE1] text-[#17102A] text-xs font-mono uppercase tracking-widest font-semibold rounded transition-colors"
+                  className="text-center py-3.5 px-6 border border-[#D9D2C5] hover:bg-[#EFEAE1] text-[#111111] text-xs font-mono uppercase tracking-widest font-semibold rounded transition-colors"
                 >
                   Review Service Blueprint
                 </Link>
