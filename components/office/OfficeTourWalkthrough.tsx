@@ -34,6 +34,7 @@ interface VideoClip {
   microTimingNote: string;
   department: string;
   speedRampCandidate?: string;
+  thumbnail: string;
 }
 
 export const officeClips: VideoClip[] = [
@@ -51,6 +52,7 @@ export const officeClips: VideoClip[] = [
       "00:00–00:04 Intro brand hook. 00:06–00:14 prime candidate for speed-ramping to private cabins.",
     department: "Executive Welcome & Brand Gallery",
     speedRampCandidate: "00:06 – 00:14 (2.5x speed ramp)",
+    thumbnail: "/frames/clip1_reception.jpg",
   },
   {
     id: "clip-2",
@@ -66,6 +68,7 @@ export const officeClips: VideoClip[] = [
       "Perspective shift at 00:18 (Hard Cut 1). Continuous glide past 3 open-plan bays (speed-ramp 00:21–00:27).",
     department: "Engineering & Growth Operations",
     speedRampCandidate: "00:21 – 00:27 (2.0x speed ramp)",
+    thumbnail: "/frames/clip2_hallway.jpg",
   },
   {
     id: "clip-3",
@@ -79,6 +82,7 @@ export const officeClips: VideoClip[] = [
       "Focuses on a glass-enclosed boardroom featuring a large white meeting table, black chairs, a yellow wall poster, and an employee working on a laptop.",
     microTimingNote: "00:30 Hard Cut 2: High-focus 3-second strategic war room b-roll.",
     department: "Executive Strategy & Client War Room",
+    thumbnail: "/frames/clip3_conference.jpg",
   },
   {
     id: "clip-4",
@@ -92,6 +96,7 @@ export const officeClips: VideoClip[] = [
       "Medium-wide shot pushing toward a multidisciplinary team working at a warm wooden desk lined with a lush green planter box and open shelving dividers.",
     microTimingNote: "00:33 Hard Cut 3: Focused team collaboration and developer sprint bay (4 seconds).",
     department: "Shopify Architecture & Performance",
+    thumbnail: "/frames/clip4_workstation.jpg",
   },
   {
     id: "clip-5",
@@ -105,6 +110,7 @@ export const officeClips: VideoClip[] = [
       "Shows a group of team members collaborating around a shared table, flanked by glass executive cabins and an iconic hanging swing chair in the background.",
     microTimingNote: "00:37 Hard Cut 4: Culture and informal ideation corner (3 seconds).",
     department: "Lookify AI Lab & Creative Strategy",
+    thumbnail: "/frames/clip5_lounge.jpg",
   },
   {
     id: "clip-6",
@@ -118,6 +124,7 @@ export const officeClips: VideoClip[] = [
       "Framed over a natural wooden bar counter with a high stool, looking into the bright studio dining space where team members are gathered at tables.",
     microTimingNote: "00:40–00:43 Hard Cut 5 (Outro): Social breakout space and artisan coffee hub.",
     department: "Community & Breakout Sanctuary",
+    thumbnail: "/frames/clip6_cafeteria.jpg",
   },
 ];
 
@@ -247,6 +254,7 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
               <video
                 ref={videoRef}
                 src="/videos/office-tour.mp4"
+                poster="/frames/clip1_reception.jpg"
                 playsInline
                 preload="metadata"
                 onLoadedMetadata={() => setVideoLoaded(true)}
@@ -337,21 +345,33 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
                 ))}
               </div>
 
-              {/* Six Clip Quick-Jump Pills */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 pt-2">
+              {/* Six Clip Quick-Jump Pills with Extracted Frame Thumbnails */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
                 {officeClips.map((c, idx) => (
                   <button
                     key={c.id}
                     onClick={() => handleJumpToClip(c, idx)}
-                    className={`p-2.5 rounded-lg border text-left transition-all cursor-pointer ${
+                    className={`group p-2 rounded-xl border text-left transition-all cursor-pointer overflow-hidden ${
                       activeClipIndex === idx
                         ? "bg-[#241B3B] border-[#1F7A8C] text-white shadow-md ring-1 ring-[#1F7A8C]"
                         : "bg-white/5 border-white/10 text-[#D9D2C5]/80 hover:bg-white/10"
                     }`}
                   >
-                    <div className="flex items-center justify-between text-[10px] font-mono mb-1">
+                    <div className="relative aspect-video rounded-md overflow-hidden mb-2 bg-black/40 border border-white/10">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={c.thumbnail}
+                        alt={c.location}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <span className="absolute bottom-1 right-1 px-1 py-0.5 bg-black/80 backdrop-blur-xs text-[9px] font-mono text-white rounded">
+                        0{c.clipNumber}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between text-[10px] font-mono mb-0.5">
                       <span className="text-[#1F7A8C] font-medium">Shot 0{c.clipNumber}</span>
-                      <span>{c.timestampLabel}</span>
+                      <span className="text-white/60">{c.timestampLabel.split(" – ")[0]}</span>
                     </div>
                     <div className="text-xs font-medium text-white truncate">{c.location}</div>
                   </button>
@@ -360,8 +380,32 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
             </div>
           </div>
 
-          {/* Active Shot Detailed Editorial Card */}
-          <div className="bg-white border border-[#D9D2C5] rounded-2xl p-6 sm:p-8 space-y-4 shadow-xs">
+          {/* Active Shot Detailed Editorial Card with High-Res Still */}
+          <div className="bg-white border border-[#D9D2C5] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs">
+            {/* Visual Frame Banner of the Active Location */}
+            <div className="relative aspect-video sm:aspect-21/9 rounded-xl overflow-hidden border border-[#D9D2C5]/50 bg-[#17102A]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={currentClip.thumbnail}
+                alt={currentClip.location}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#17102A]/90 via-[#17102A]/30 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#1F7A8C] bg-white/15 backdrop-blur-md px-2.5 py-1 rounded border border-white/20">
+                    Zone 0{currentClip.clipNumber} • {currentClip.department}
+                  </span>
+                  <div className="text-white text-xl sm:text-2xl font-serif mt-1.5 drop-shadow-sm">
+                    {currentClip.location}
+                  </div>
+                </div>
+                <span className="text-xs font-mono text-white/90 bg-black/60 backdrop-blur-xs px-3 py-1 rounded border border-white/20 self-start sm:self-auto">
+                  {currentClip.timestampLabel}
+                </span>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#D9D2C5] pb-4">
               <div>
                 <span className="text-xs font-mono uppercase tracking-wider text-[#6B3BA6]">
@@ -398,15 +442,29 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
           </div>
         </div>
       ) : (
-        /* Lite Mode: Complete Shot-by-Shot Card Grid */
+        /* Lite Mode: Complete Shot-by-Shot Card Grid with Extracted Frames */
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {officeClips.map((clip) => (
               <div
                 key={clip.id}
-                className="bg-white border border-[#D9D2C5] rounded-xl p-6 hover:shadow-lg transition-all space-y-4 flex flex-col justify-between"
+                className="bg-white border border-[#D9D2C5] rounded-xl p-5 hover:shadow-lg transition-all space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-3">
+                  {/* Extracted Frame Still */}
+                  <div className="relative aspect-video rounded-lg overflow-hidden border border-[#D9D2C5]/50 bg-black/10">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={clip.thumbnail}
+                      alt={clip.location}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <span className="absolute bottom-1.5 right-1.5 px-2 py-0.5 rounded bg-black/75 backdrop-blur-xs text-white text-[10px] font-mono">
+                      {clip.timestampLabel}
+                    </span>
+                  </div>
+
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="text-[#6B3BA6] font-medium">Shot 0{clip.clipNumber}</span>
                     <span className="px-2 py-0.5 rounded bg-[#F5F1EA] border border-[#D9D2C5] text-[#17102A]/70">

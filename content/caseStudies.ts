@@ -23,6 +23,7 @@ export interface CaseStudy {
   techStack: string[];
   relatedServices: string[];
   nextCaseSlug: string;
+  image: string;
 }
 
 export interface PipelineItem {
@@ -42,6 +43,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     heroMetric: '200%+',
     heroMetricLabel: 'EOS Sale Revenue Expansion',
     status: 'published',
+    image: '/images/case-studies/tarun-tahiliani.jpg',
     overview: 'Tarun Tahiliani is one of India\'s most celebrated couturiers, with over three decades defining Indian bridal and luxury fashion. Growify engineered their complete transition from legacy Magento to a custom Shopify Plus flagship.',
     challenge: 'The legacy storefront suffered from severe catalog checkout friction, an inability to withstand high-volume seasonal sale surges, and complex inventory fragmentation across multiple physical boutiques and central workshops.',
     approach: [
@@ -89,6 +91,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     heroMetric: '2.54x',
     heroMetricLabel: 'Average Order Value Increase',
     status: 'published',
+    image: '/images/case-studies/mahima-mahajan.jpg',
     overview: 'Growify built the systems, teams, and international growth engine allowing Mahima Mahajan to scale profitably across borders into the United States and the Middle East.',
     challenge: 'Scaling digital revenue consistently while expanding into high-ticket international markets, maintaining luxury fulfillment speed, and safeguarding brand profitability without discounting.',
     approach: [
@@ -137,6 +140,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     heroMetric: '75%',
     heroMetricLabel: 'Total Brand Revenue Expansion',
     status: 'published',
+    image: '/images/case-studies/house-of-masaba.jpg',
     overview: 'House of Masaba is one of India\'s most recognizable lifestyle and designer fashion brands. Growify partnered to transition the storefront to Shopify 2.0 and run full-funnel acquisition.',
     challenge: 'High cart drop-off during flash capsule drops, complex Cash-on-Delivery verification logistics across Tier-2/Tier-3 India, and rising customer acquisition costs.',
     approach: [

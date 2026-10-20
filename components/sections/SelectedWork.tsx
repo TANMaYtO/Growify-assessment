@@ -36,14 +36,28 @@ export function SelectedWork() {
           {cases.map((cs) => (
             <article
               key={cs.slug}
-              className="bg-[#FAF7F2] border border-[#D9D2C5] rounded-lg p-6 sm:p-8 flex flex-col justify-between hover:border-[#6B3BA6]/60 transition-all hover:shadow-md group"
+              className="bg-[#FAF7F2] border border-[#D9D2C5] rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-[#6B3BA6]/60 transition-all hover:shadow-xl group"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#17102A]/50 bg-[#EFEAE1] px-2 py-0.5 rounded">
+                {/* Editorial Couture Image Banner */}
+                <div className="relative aspect-16/10 rounded-lg overflow-hidden border border-[#D9D2C5]/70 bg-black/10">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={cs.image}
+                    alt={cs.brand}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#17102A]/70 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-mono text-white border border-white/20">
                     {cs.category}
-                  </span>
-                  <span className="text-xs font-mono text-[#1F7A8C]">Case Study</span>
+                  </div>
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs font-mono">
+                    <span className="font-serif italic text-white/90 drop-shadow-sm">Digital Flagship</span>
+                    <span className="px-2 py-0.5 rounded bg-white/20 backdrop-blur-xs text-[10px] text-white">
+                      Verified Case
+                    </span>
+                  </div>
                 </div>
 
                 <div>

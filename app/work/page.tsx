@@ -65,32 +65,41 @@ export default function WorkPage(): React.JSX.Element {
               key={cs.slug}
               className="bg-white border border-[#D9D2C5] rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12"
             >
-              {/* Left Column: Visual & Headline */}
-              <div className="lg:col-span-5 bg-[#241B3B] text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#6B3BA6]/20 rounded-full blur-2xl pointer-events-none" />
+              {/* Left Column: Visual & Headline with High-Fashion Editorial Photography */}
+              <div className="lg:col-span-5 relative text-white p-8 sm:p-12 flex flex-col justify-between overflow-hidden min-h-[400px] bg-[#17102A] group">
+                {/* Background Image with Dark Luxury Vignette */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={cs.image}
+                  alt={cs.brand}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#17102A] via-[#17102A]/80 to-[#17102A]/60" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#1F7A8C]/20 rounded-full blur-2xl pointer-events-none" />
 
                 <div className="space-y-6 relative z-10">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono px-2.5 py-1 rounded bg-white/10 text-[#D9D2C5] border border-white/15">
+                    <span className="text-xs font-mono px-2.5 py-1 rounded bg-black/60 backdrop-blur-xs text-[#D9D2C5] border border-white/20">
                       {cs.category}
                     </span>
-                    <span className="text-xs font-mono text-[#1F7A8C]">
+                    <span className="text-xs font-mono text-[#1F7A8C] bg-white/10 backdrop-blur-xs px-2 py-0.5 rounded border border-white/10">
                       Case 0{idx + 1}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="font-serif text-3xl sm:text-4xl font-light text-white leading-tight">
+                    <h3 className="font-serif text-3xl sm:text-4xl font-light text-white leading-tight drop-shadow-sm">
                       {cs.brand}
                     </h3>
-                    <p className="text-sm font-sans text-[#D9D2C5] mt-2 leading-relaxed">
+                    <p className="text-sm font-sans text-[#D9D2C5] mt-2 leading-relaxed drop-shadow-xs">
                       {cs.tagline}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-8 relative z-10 border-t border-white/10 mt-8">
-                  <div className="font-serif text-4xl sm:text-5xl font-light text-[#1F7A8C]">
+                <div className="pt-8 relative z-10 border-t border-white/20 mt-8">
+                  <div className="font-serif text-4xl sm:text-5xl font-light text-[#1F7A8C] drop-shadow-sm">
                     {cs.heroMetric}
                   </div>
                   <div className="text-xs font-mono text-[#D9D2C5] mt-1 uppercase tracking-wider">

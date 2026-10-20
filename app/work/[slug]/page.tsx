@@ -106,7 +106,31 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyPageProps
       </section>
 
       {/* Main Narrative Breakdown */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
+      <section className="py-20 max-w-7xl mx-auto px-6 space-y-12">
+        {/* Editorial Flagship Showcase Banner */}
+        <div className="relative aspect-16/9 sm:aspect-21/9 rounded-2xl overflow-hidden border border-[#D9D2C5] shadow-xl bg-[#17102A]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={cs.image}
+            alt={`${cs.brand} Flagship Case Study`}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#17102A]/90 via-[#17102A]/30 to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-[#1F7A8C] bg-white/10 backdrop-blur-md px-3 py-1 rounded border border-white/20">
+                Flagship Architecture • {cs.category}
+              </span>
+              <div className="text-white text-2xl sm:text-3xl font-serif mt-2 drop-shadow-sm">
+                {cs.brand} Commercial Flagship
+              </div>
+            </div>
+            <span className="text-xs font-mono text-white/90 bg-black/60 backdrop-blur-xs px-3 py-1.5 rounded border border-white/20 self-start sm:self-auto">
+              Verified Case Study
+            </span>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* Left Column: Challenge & Phased Approach */}

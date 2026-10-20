@@ -14,19 +14,25 @@ export function TechShowcase() {
       title: 'Hand-Embroidered Zardozi Lehenga',
       tag: 'Bridal Couture',
       fitTime: '0.8s Render',
-      drapeType: 'Heavy Silk & Tulle Drape Simulation',
+      drapeType: 'Raw Silk & Handcrafted Gold Threadwork',
+      image: '/images/lookify/lehenga_crimson.jpg',
+      color: '#8B1E3F',
     },
     sherwani: {
       title: 'Structured Raw Silk Bandhgala',
       tag: 'Menswear Couture',
       fitTime: '0.6s Render',
-      drapeType: 'Tailored Shoulder & Lapel Geometry',
+      drapeType: 'Micro-Velvet & Tailored Lapel Geometry',
+      image: '/images/lookify/sherwani_navy.jpg',
+      color: '#17102A',
     },
     evening: {
-      title: 'Draped Contemporary Organza Saree',
+      title: 'Pleated Metallic Sculpted Gown',
       tag: 'Contemporary Luxury',
       fitTime: '0.7s Render',
-      drapeType: 'Translucent Pleat & Flow Physics',
+      drapeType: 'Liquid Lamé & Organza Fluting',
+      image: '/images/lookify/gown_gold.jpg',
+      color: '#B38F4D',
     },
   };
 
@@ -153,26 +159,47 @@ export function TechShowcase() {
                 ))}
               </div>
 
-              {/* Mock Canvas Viewport */}
-              <div className="relative aspect-4/3 bg-[#EFEAE1] rounded border border-[#D9D2C5] flex flex-col items-center justify-center p-4 text-center overflow-hidden">
-                <div className="w-16 h-16 rounded-full bg-white shadow flex items-center justify-center mb-3">
-                  <Shirt className="w-8 h-8 text-[#6B3BA6]" />
+              {/* Real Interactive Canvas Viewport */}
+              <div className="relative aspect-4/3 rounded-xl border border-[#D9D2C5] overflow-hidden bg-[#17102A] shadow-inner group">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={garmentPreviews[selectedGarment].image}
+                  alt={garmentPreviews[selectedGarment].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+
+                {/* Top Badge */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono">
+                  <span className="px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-white border border-white/20">
+                    {garmentPreviews[selectedGarment].tag}
+                  </span>
+                  <span className="px-2 py-0.5 rounded bg-emerald-500/90 text-white font-medium">
+                    {garmentPreviews[selectedGarment].fitTime}
+                  </span>
                 </div>
-                <span className="font-display text-base font-semibold text-[#17102A]">
-                  {garmentPreviews[selectedGarment].title}
-                </span>
-                <span className="text-xs font-mono text-[#1F7A8C] mt-0.5">
-                  {garmentPreviews[selectedGarment].tag}
-                </span>
-                <div className="mt-3 text-[11px] font-mono text-[#17102A]/70 space-y-0.5">
-                  <p>Simulation: {garmentPreviews[selectedGarment].drapeType}</p>
-                  <p className="text-emerald-700 font-semibold">{garmentPreviews[selectedGarment].fitTime} · Zero-Lag Render</p>
+
+                {/* Bottom Garment Telemetry */}
+                <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
+                  <div className="font-serif text-base text-white font-normal truncate">
+                    {garmentPreviews[selectedGarment].title}
+                  </div>
+                  <div className="flex items-center justify-between text-[10px] font-mono text-[#D9D2C5]/80">
+                    <span className="truncate">{garmentPreviews[selectedGarment].drapeType}</span>
+                    <span className="text-[#1F7A8C] shrink-0 ml-2">24 Mesh Vertices</span>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-[10px] text-center text-[#17102A]/50 font-mono">
-                *Simulated canvas component. Real model integrates through Shopify theme app extension.
-              </p>
+              <div className="flex items-center justify-between text-[10px] text-[#17102A]/70 font-mono px-1">
+                <span>*On-device WebGL simulation.</span>
+                <Link
+                  href="/technology/lookify"
+                  className="text-[#6B3BA6] hover:underline font-medium"
+                >
+                  Open Full Studio Simulator →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
