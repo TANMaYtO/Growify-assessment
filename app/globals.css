@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-bone: #F5F1EA;
+    --text-ink: #17102A;
+    --brand-violet: #6B3BA6;
+    --brand-violet-dark: #3F304D;
+    --accent-teal: #1F7A8C;
+    --border-stone: #D9D2C5;
+    --surface-mist: #EFEAE1;
+    --surface-card: #FAF7F2;
+  }
+
+  body {
+    background-color: var(--bg-bone);
+    color: var(--text-ink);
+    font-family: var(--font-inter, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-fraunces, 'Fraunces', Georgia, serif);
+  }
+}
+
+/* Patternwork Seam Line Styling */
+.seam-line {
+  background-image: linear-gradient(to right, var(--border-stone) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+
+.seam-line-vertical {
+  background-image: linear-gradient(to bottom, var(--border-stone) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: right;
+  background-size: 1px 8px;
+  background-repeat: repeat-y;
+}
+
+/* Review Mode Underlines & Badges */
+.review-mode-active [data-fact-id] {
+  position: relative;
+  border-bottom: 2px dashed #1F7A8C;
+  cursor: help;
+}
+
+.review-mode-active [data-fact-status="verified"] {
+  border-bottom-color: #1F7A8C;
+}
+
+.review-mode-active [data-fact-status="supplied"] {
+  border-bottom-color: #D97706;
+}
+
+.review-mode-active [data-fact-status="pending-validation"] {
+  border-bottom-color: #DC2626;
+  background-color: rgba(220, 38, 38, 0.08);
+}
+
+.review-mode-active [data-fact-status="placeholder"] {
+  border-bottom-color: #6B7280;
+  border-bottom-style: dotted;
+}
+
+/* Animations */
+@keyframes seamDraw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-seam {
+  stroke-dasharray: 6 3;
+  animation: seamDraw 1.2s ease-out forwards;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-bone);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-stone);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-violet);
+}
