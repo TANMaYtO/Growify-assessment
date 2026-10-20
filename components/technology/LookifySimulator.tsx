@@ -525,6 +525,17 @@ export function LookifySimulator(): React.JSX.Element {
               onMouseLeave={() => setIsDraggingSlider(false)}
               className="relative my-4 mx-auto w-full max-w-[420px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/20 select-none bg-black/60 shadow-inner group"
             >
+              {/* Dynamic Neural Laser Scanning Beam during Draping */}
+              {isDraping && (
+                <div className="absolute inset-0 pointer-events-none z-40 overflow-hidden">
+                  <div className="animate-laser-scan h-1 bg-[#9E7D47] shadow-[0_0_15px_#9E7D47,0_0_30px_#9E7D47]" />
+                  <div className="absolute inset-0 bg-[#9E7D47]/10 animate-pulse pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 bg-[#0E0D0C]/90 px-3 py-1.5 rounded-full text-[10px] font-mono text-[#9E7D47] border border-[#9E7D47]/40 flex items-center gap-2 shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-[#9E7D47] animate-ping" />
+                    <span>Neural Warp Convergence in Progress...</span>
+                  </div>
+                </div>
+              )}
               {/* ========================================================= */}
               {/* MODE 1: SPLIT VTO (BEFORE & AFTER INTERACTIVE SLIDER) */}
               {/* ========================================================= */}
@@ -705,7 +716,11 @@ export function LookifySimulator(): React.JSX.Element {
                             : "w-2.5 h-2.5 bg-[#9E7D47] border border-white hover:scale-125"
                         }`}
                         title={pt.name}
-                      />
+                      >
+                        {(pt.id === "lm-1" || pt.id === "lm-11" || pt.id === "lm-23") && (
+                          <span className="absolute inset-0 rounded-full border border-[#9E7D47] animate-ping opacity-75 pointer-events-none" />
+                        )}
+                      </button>
                     );
                   })}
 

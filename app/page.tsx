@@ -72,8 +72,14 @@ export default function HomePage(): React.JSX.Element {
       {/* 4. Diagnostic Pathfinder: Interactive self-assessment tool */}
       <PathFinderWidget />
 
+      {/* Seam Motif Divider */}
+      <SeamDivider variant="tailor-tack" />
+
       {/* 5. S.C.A.L.E. Operating System Explorer: 5 phases with AI layer toggle */}
       <SCALEExplorer />
+
+      {/* Seam Motif Divider */}
+      <SeamDivider variant="running-stitch" />
 
       {/* Dynamic Infinite Running Client Couture Marquee (Obsidian Ribbon) */}
       <RunningMarquee
@@ -95,17 +101,32 @@ export default function HomePage(): React.JSX.Element {
       {/* 6. Selected Work: Flagship case studies with verified impact & 3D tilt */}
       <SelectedWork />
 
+      {/* Seam Motif Divider */}
+      <SeamDivider variant="basting" />
+
       {/* 7. Proprietary Tech Showcase: Lookify VTO simulator, Rossify, Craftify */}
       <TechShowcase />
+
+      {/* Seam Motif Divider */}
+      <SeamDivider variant="cross-stitch" />
 
       {/* 8. Ecosystem & Partner Matrix: Category-driven architecture */}
       <EcosystemMatrix />
 
+      {/* Seam Motif Divider */}
+      <SeamDivider variant="running-stitch" />
+
       {/* 9. Studio Culture & Headquarters Teaser */}
       <OfficeCultureTeaser />
 
+      {/* Seam Motif Divider */}
+      <SeamDivider variant="tailor-tack" />
+
       {/* 10. Why Growify: The 5 operating pillars and zero fluff */}
       <WhyGrowify />
+
+      {/* Seam Motif Divider */}
+      <SeamDivider variant="running-stitch" />
 
       {/* 11. Executive FAQ: Answer-first clarity */}
       <ExecutiveFAQ />

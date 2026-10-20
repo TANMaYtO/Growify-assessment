@@ -31,26 +31,29 @@ const faqItems = [
   },
 ];
 
-export function ExecutiveFAQ() {
+/**
+ * Renders the Executive FAQ section with smooth grid-template-rows height transitions.
+ */
+export function ExecutiveFAQ(): React.JSX.Element {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
-  const toggle = (idx: number) => {
+  function toggle(idx: number): void {
     setOpenIdx(openIdx === idx ? null : idx);
-  };
+  }
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAF8F5] border-t border-[#D9D2C5] font-sans">
+    <section className="py-20 md:py-28 bg-[#FAF8F5] border-t border-[#D9D2C5] font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="fade-up">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#F7F5F0] border border-[#D9D2C5] text-xs font-mono text-[#9E7D47] mb-3">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7F5F0] border border-[#D9D2C5] text-xs font-mono text-[#9E7D47] mb-3">
               <HelpCircle className="w-3.5 h-3.5" />
               <span>Executive Clarifications</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl text-[#111111] font-normal">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-[#111111]/70 mt-2">
+            <p className="text-xs sm:text-sm text-[#111111]/70 mt-2 font-sans">
               Direct answers on our scope, methodology, technology, and commercial operating standards.
             </p>
           </div>
@@ -58,31 +61,43 @@ export function ExecutiveFAQ() {
 
         <ScrollReveal animation="fade-up" delay={100}>
           <div className="space-y-3">
-            {faqItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F7F5F0] border border-[#D9D2C5] rounded-lg overflow-hidden transition-all"
-              >
-                <button
-                  onClick={() => toggle(idx)}
-                  className="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none"
+            {faqItems.map((item, idx) => {
+              const isOpen = openIdx === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`bg-[#F7F5F0] border rounded-xl overflow-hidden transition-all duration-300 ${
+                    isOpen ? 'border-[#9E7D47] shadow-sm' : 'border-[#D9D2C5] hover:border-[#9E7D47]/50'
+                  }`}
                 >
-                  <span className="text-sm sm:text-base font-semibold text-[#111111]">
-                    {item.q}
-                  </span>
-                  <ChevronDown
-                    className={`w-4 h-4 text-[#111111]/60 transition-transform ${
-                      openIdx === idx ? 'rotate-180 text-[#9E7D47]' : ''
+                  <button
+                    onClick={() => toggle(idx)}
+                    className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
+                  >
+                    <span className="text-sm sm:text-base font-medium text-[#111111]">
+                      {item.q}
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180 text-[#9E7D47]' : 'text-[#111111]/60'
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                     }`}
-                  />
-                </button>
-                {openIdx === idx && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#111111]/80 border-t border-[#D9D2C5]/50 leading-relaxed font-sans">
-                    {item.a}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#111111]/80 border-t border-[#D9D2C5]/50 leading-relaxed font-sans">
+                        {item.a}
+                      </div>
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </ScrollReveal>
       </div>

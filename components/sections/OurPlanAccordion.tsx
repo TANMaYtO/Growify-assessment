@@ -83,7 +83,7 @@ export function OurPlanAccordion(): React.JSX.Element {
   const [activeCardId, setActiveCardId] = useState<string>("setup");
 
   return (
-    <section className="py-24 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-y border-white/10">
+    <section id="our-plan" className="py-24 bg-[#0E0D0C] text-[#FAF8F5] relative overflow-hidden border-y border-white/10">
       <div className="max-w-7xl mx-auto px-6 space-y-12">
         {/* Section Header */}
         <ScrollReveal animation="fade-up">

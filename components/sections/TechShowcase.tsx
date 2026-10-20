@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { useReview } from '../review/ReviewContext';
 import { Sparkles, ArrowUpRight, Shirt, Tablet, Lock, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal } from '../motion/ScrollReveal';
+import { ParallaxCard } from '../motion/ParallaxCard';
+import { WordReveal } from '../motion/WordReveal';
+import { MagneticButton } from '../motion/MagneticButton';
 
 export function TechShowcase() {
   const { trackEvent } = useReview();
@@ -38,7 +41,7 @@ export function TechShowcase() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAF8F5] font-sans">
+    <section id="technology" className="py-16 md:py-24 bg-[#FAF8F5] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal animation="fade-up">
@@ -46,9 +49,11 @@ export function TechShowcase() {
             <span className="text-xs font-mono tracking-widest uppercase text-[#9E7D47] block mb-2">
               Proprietary Products & Technology
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111111]">
-              Technology we build and run ourselves.
-            </h2>
+            <WordReveal
+              as="h2"
+              text="Technology we build and run ourselves."
+              className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111111]"
+            />
             <p className="text-sm sm:text-base text-[#111111]/80 mt-3 leading-relaxed">
               Growify is not just a services company. We build software platforms that eliminate commercial friction for luxury houses—deployed on online storefronts and in brick-and-mortar retail showrooms.
             </p>
@@ -213,32 +218,35 @@ export function TechShowcase() {
         <ScrollReveal animation="fade-up" delay={160}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Rossify */}
-          <div className="bg-[#FAF8F5] border border-[#D9D2C5] rounded-lg p-6 sm:p-8 space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono text-[#9E7D47] bg-[#9E7D47]/10 border border-[#9E7D47]/30 px-2.5 py-0.5 rounded font-medium">
-                Enterprise Beta · Attribution
-              </span>
-              <span className="text-xs font-mono text-[#111111]/50">Proprietary IP</span>
+          <ParallaxCard maxTilt={3.5} className="h-full">
+          <div className="bg-[#FAF8F5] border border-[#D9D2C5] rounded-xl p-6 sm:p-8 space-y-4 h-full flex flex-col justify-between hover:border-[#9E7D47] transition-all hover:shadow-xl">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono text-[#9E7D47] bg-[#9E7D47]/10 border border-[#9E7D47]/30 px-2.5 py-0.5 rounded font-medium">
+                  Enterprise Beta · Attribution
+                </span>
+                <span className="text-xs font-mono text-[#111111]/50">Proprietary IP</span>
+              </div>
+
+              <h3 className="font-display text-2xl text-[#111111]">
+                Rossify
+              </h3>
+
+              <p className="text-xs sm:text-sm text-[#111111]/80 leading-relaxed font-sans">
+                Proprietary ROAS & revenue intelligence pipeline tracking high-AOV omnichannel sales, multi-touch international campaigns, and WhatsApp-assisted sales closures.
+              </p>
+
+              <ul className="text-xs space-y-2 text-[#111111]/75 pt-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
+                  <span>First-party cookie attribution connecting ad click to WhatsApp chat</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
+                  <span>Cross-border currency revenue tracking (US, UAE, UK)</span>
+                </li>
+              </ul>
             </div>
-
-            <h3 className="font-display text-2xl text-[#111111]">
-              Rossify
-            </h3>
-
-            <p className="text-xs sm:text-sm text-[#111111]/80 leading-relaxed">
-              Proprietary ROAS & revenue intelligence pipeline tracking high-AOV omnichannel sales, multi-touch international campaigns, and WhatsApp-assisted sales closures.
-            </p>
-
-            <ul className="text-xs space-y-2 text-[#111111]/75 pt-2">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
-                <span>First-party cookie attribution connecting ad click to WhatsApp chat</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
-                <span>Cross-border currency revenue tracking (US, UAE, UK)</span>
-              </li>
-            </ul>
 
             <div className="pt-4 border-t border-[#D9D2C5]">
               <Link
@@ -250,34 +258,38 @@ export function TechShowcase() {
               </Link>
             </div>
           </div>
+          </ParallaxCard>
 
           {/* Craftify */}
-          <div className="bg-[#FAF8F5] border border-[#D9D2C5] rounded-lg p-6 sm:p-8 space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono text-stone-700 bg-stone-100 border border-stone-300 px-2.5 py-0.5 rounded font-medium">
-                Design System · Framework
-              </span>
-              <span className="text-xs font-mono text-[#111111]/50">Proprietary IP</span>
+          <ParallaxCard maxTilt={3.5} className="h-full">
+          <div className="bg-[#FAF8F5] border border-[#D9D2C5] rounded-xl p-6 sm:p-8 space-y-4 h-full flex flex-col justify-between hover:border-[#9E7D47] transition-all hover:shadow-xl">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono text-stone-700 bg-stone-100 border border-stone-300 px-2.5 py-0.5 rounded font-medium">
+                  Design System · Framework
+                </span>
+                <span className="text-xs font-mono text-[#111111]/50">Proprietary IP</span>
+              </div>
+
+              <h3 className="font-display text-2xl text-[#111111]">
+                Craftify
+              </h3>
+
+              <p className="text-xs sm:text-sm text-[#111111]/80 leading-relaxed font-sans">
+                Modular luxury commerce theme architecture and custom component framework engineered specifically for Indian couture, jewellery, and high-AOV lifestyle brands.
+              </p>
+
+              <ul className="text-xs space-y-2 text-[#111111]/75 pt-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
+                  <span>Zero-layout-shift Liquid & React luxury component primitives</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
+                  <span>Pre-built bridal appointment and custom measurement modals</span>
+                </li>
+              </ul>
             </div>
-
-            <h3 className="font-display text-2xl text-[#111111]">
-              Craftify
-            </h3>
-
-            <p className="text-xs sm:text-sm text-[#111111]/80 leading-relaxed">
-              Modular luxury commerce theme architecture and custom component framework engineered specifically for Indian couture, jewellery, and high-AOV lifestyle brands.
-            </p>
-
-            <ul className="text-xs space-y-2 text-[#111111]/75 pt-2">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
-                <span>Zero-layout-shift Liquid & React luxury component primitives</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#9E7D47]" />
-                <span>Pre-built bridal appointment and custom measurement modals</span>
-              </li>
-            </ul>
 
             <div className="pt-4 border-t border-[#D9D2C5]">
               <Link
@@ -289,6 +301,7 @@ export function TechShowcase() {
               </Link>
             </div>
           </div>
+          </ParallaxCard>
         </div>
         </ScrollReveal>
       </div>

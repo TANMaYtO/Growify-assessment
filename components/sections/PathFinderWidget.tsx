@@ -101,7 +101,7 @@ export function PathFinderWidget() {
   const rec = getRecommendation();
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAF8F5] border-t border-[#D9D2C5] font-sans">
+    <section id="pathfinder" className="py-16 md:py-24 bg-[#FAF8F5] border-t border-[#D9D2C5] font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="fade-up">
           <div className="text-center max-w-2xl mx-auto mb-10">

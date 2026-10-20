@@ -1,15 +1,34 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { mainNav } from '@/content/navigation';
 import { useReview } from '../review/ReviewContext';
 import { Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react';
+import { MagneticButton } from '../motion/MagneticButton';
 
+/**
+ * Editorial flagship header navigation featuring scroll-driven height compression,
+ * dynamic backdrop blur elevation, and magnetic attraction physics on primary CTAs.
+ */
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { trackEvent } = useReview();
+
+  useEffect(() => {
+    function onScroll(): void {
+      setIsScrolled(window.scrollY > 25);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
 
   const handleCtaClick = () => {
     trackEvent('cta_click', {
@@ -20,19 +39,33 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#D9D2C5]/80 transition-all font-sans">
+    <header
+      className={`sticky top-0 z-40 transition-all duration-300 font-sans ${
+        isScrolled
+          ? 'bg-[#FAF8F5]/90 backdrop-blur-xl border-b border-[#D9D2C5]/90 shadow-xs'
+          : 'bg-[#FAF8F5]/98 backdrop-blur-md border-b border-[#D9D2C5]/80'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${
+            isScrolled ? 'h-16' : 'h-20'
+          }`}
+        >
           {/* Brand Logo */}
           <Link
             href="/"
             onClick={() => trackEvent('nav_click', { target: '/' })}
             className="group flex flex-col items-start focus:outline-none"
           >
-            <span className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-[#111111] transition-colors group-hover:text-[#9E7D47]">
+            <span
+              className={`font-display font-bold tracking-tight text-[#111111] transition-all duration-300 group-hover:text-[#9E7D47] ${
+                isScrolled ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'
+              }`}
+            >
               GROWIFY
             </span>
-            <span className="text-[10px] font-mono tracking-widest text-[#111111]/60 uppercase -mt-1">
+            <span className="text-[10px] font-mono tracking-widest text-[#111111]/60 uppercase -mt-0.5">
               Digital LLP · New Delhi
             </span>
           </Link>
@@ -95,14 +128,16 @@ export function Navbar() {
 
           {/* Primary Action Button */}
           <div className="hidden sm:flex items-center gap-3">
-            <Link
-              href="/contact"
-              onClick={handleCtaClick}
-              className="px-5 py-2.5 bg-[#111111] hover:bg-[#9E7D47] text-white text-xs uppercase tracking-widest font-mono font-semibold transition-all rounded shadow hover:shadow-md flex items-center gap-1.5"
-            >
-              <span>Book a Growth Audit</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
+            <MagneticButton magneticRadius={40}>
+              <Link
+                href="/contact"
+                onClick={handleCtaClick}
+                className="px-5 py-2.5 bg-[#111111] hover:bg-[#9E7D47] text-white text-xs uppercase tracking-widest font-mono font-semibold transition-all rounded shadow hover:shadow-md flex items-center gap-1.5"
+              >
+                <span>Book a Growth Audit</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </MagneticButton>
           </div>
 
           {/* Mobile Menu Hamburger */}

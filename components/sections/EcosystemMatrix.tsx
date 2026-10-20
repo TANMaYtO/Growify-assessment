@@ -21,7 +21,7 @@ export function EcosystemMatrix() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAF8F5] font-sans">
+    <section id="ecosystem" className="py-16 md:py-24 bg-[#FAF8F5] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal animation="fade-up">

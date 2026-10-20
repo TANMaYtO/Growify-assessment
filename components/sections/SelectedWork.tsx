@@ -9,12 +9,13 @@ import { SeamDivider } from '../ui/SeamDivider';
 import { ScrollReveal } from '../motion/ScrollReveal';
 import { ParallaxImage } from '../motion/ParallaxImage';
 import { ParallaxCard } from '../motion/ParallaxCard';
+import { WordReveal } from '../motion/WordReveal';
 
 export function SelectedWork() {
   const cases = Object.values(caseStudies);
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAF8F5] font-sans">
+    <section id="commissions" className="py-16 md:py-24 bg-[#FAF8F5] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal animation="fade-up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
@@ -22,9 +23,11 @@ export function SelectedWork() {
               <span className="text-xs font-mono tracking-widest uppercase text-[#9E7D47] block mb-2">
                 Commercial Proof & Case Studies
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111111]">
-                Selected Commercial Engagements
-              </h2>
+              <WordReveal
+                as="h2"
+                text="Selected Commercial Engagements"
+                className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-[#111111]"
+              />
             </div>
             <Link
               href="/work"

@@ -5,6 +5,9 @@ import { ReviewProvider } from '@/components/review/ReviewContext';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { ScrollProgress } from '@/components/motion/ScrollProgress';
+import { ScrollToTop } from '@/components/motion/ScrollToTop';
+import { SectionNavRail } from '@/components/motion/SectionNavRail';
+import { CustomCursor } from '@/components/motion/CustomCursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -99,6 +102,15 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#111111]">
         {/* Top Hairline Scroll Progress Bar */}
         <ScrollProgress />
+
+        {/* Bespoke Editorial Custom Cursor */}
+        <CustomCursor />
+
+        {/* Section Navigation Rail */}
+        <SectionNavRail />
+
+        {/* Circular Scroll-To-Top Control */}
+        <ScrollToTop />
 
         {/* Skip to Content Link for Accessibility */}
         <a
