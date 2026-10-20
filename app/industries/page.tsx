@@ -19,6 +19,13 @@ const iconMap: Record<string, React.ReactNode> = {
   "d2c-apparel": <Zap className="w-5 h-5 text-[#1F7A8C]" />,
 };
 
+const industryImages: Record<string, string> = {
+  "luxury-fashion": "/images/case-studies/tarun-tahiliani.jpg",
+  "fine-jewellery": "/images/lookify/gown_gold.jpg",
+  "lifestyle-and-home": "/images/hero/luxury_atelier.jpg",
+  "d2c-apparel": "/images/case-studies/house-of-masaba.jpg",
+};
+
 /**
  * Renders the primary Industries directory page, organizing Growify's
  * specialized practices across the four core high-value commerce segments.
@@ -74,15 +81,36 @@ export default function IndustriesPage(): React.JSX.Element {
           {industryList.map((ind: IndustryVertical) => (
             <div
               key={ind.slug}
-              className="bg-white border border-[#D9D2C5] rounded-2xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-[#6B3BA6] space-y-6"
+              className="bg-white border border-[#D9D2C5] rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:border-[#6B3BA6] space-y-6"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-[#F5F1EA] border border-[#D9D2C5] flex items-center justify-center">
-                    {iconMap[ind.slug] || <Sparkles className="w-5 h-5 text-[#6B3BA6]" />}
+                {/* Vertical Visual Showcase Banner */}
+                <div className="relative aspect-16/9 rounded-xl overflow-hidden border border-[#D9D2C5]/70 bg-black/10">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={industryImages[ind.slug] || "/images/hero/luxury_atelier.jpg"}
+                    alt={ind.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#17102A]/85 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-3 left-3 w-9 h-9 rounded-lg bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                    {iconMap[ind.slug] || <Sparkles className="w-4 h-4 text-[#6B3BA6]" />}
                   </div>
-                  <span className="text-xs font-mono text-[#17102A]/50 uppercase tracking-widest">
-                    Vertical Practice
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs font-mono">
+                    <span className="font-serif italic drop-shadow-sm">{ind.name}</span>
+                    <span className="px-2 py-0.5 rounded bg-white/20 backdrop-blur-xs text-[10px] text-white">
+                      Practice Playbook
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-[#6B3BA6] uppercase tracking-widest font-medium">
+                    Commerce Vertical
+                  </span>
+                  <span className="text-xs font-mono text-[#17102A]/50">
+                    Proven Architecture
                   </span>
                 </div>
 

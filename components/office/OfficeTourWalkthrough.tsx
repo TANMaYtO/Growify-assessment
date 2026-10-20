@@ -134,12 +134,13 @@ export const officeClips: VideoClip[] = [
  */
 export function OfficeTourWalkthrough(): React.JSX.Element {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [currentTime, setCurrentTime] = useState<number>(0);
-  const [duration, setDuration] = useState<number>(43);
+  const [duration, setDuration] = useState<number>(43.8);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [activeClipIndex, setActiveClipIndex] = useState<number>(0);
   const [playbackRate, setPlaybackRate] = useState<number>(1);
-  const [isLiteMode, setIsLiteMode] = useState<boolean>(false);
+  const [viewMode, setViewMode] = useState<"video" | "canvas" | "lite">("video");
   const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
 
   // Determine active clip based on currentTime
@@ -151,6 +152,27 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
       setActiveClipIndex(idx);
     }
   }, [currentTime, activeClipIndex]);
+
+  // Draw current WebP frame to Canvas in canvas mode
+  useEffect(() => {
+    if (viewMode !== "canvas" || !canvasRef.current) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const totalFrames = 263;
+    const frameIndex = Math.min(
+      totalFrames,
+      Math.max(1, Math.round((currentTime / 43.8) * (totalFrames - 1)) + 1)
+    );
+    const frameNumber = String(frameIndex).padStart(4, "0");
+
+    const img = new window.Image();
+    img.src = `/frames/desktop/frame_${frameNumber}.webp`;
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+  }, [currentTime, viewMode]);
 
   /**
    * Toggles video play and pause state.
@@ -223,54 +245,82 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
 
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setIsLiteMode(false)}
+            onClick={() => setViewMode("video")}
             className={`px-3 py-1.5 rounded text-xs font-mono transition-all cursor-pointer ${
-              !isLiteMode
+              viewMode === "video"
                 ? "bg-[#17102A] text-white shadow-xs"
                 : "bg-white text-[#17102A]/70 hover:bg-[#F5F1EA] border border-[#D9D2C5]"
             }`}
           >
-            Video Scrubbing Player
+            1080p Video
           </button>
           <button
-            onClick={() => setIsLiteMode(true)}
+            onClick={() => {
+              setViewMode("canvas");
+              if (videoRef.current) videoRef.current.pause();
+              setIsPlaying(false);
+            }}
             className={`px-3 py-1.5 rounded text-xs font-mono transition-all cursor-pointer ${
-              isLiteMode
+              viewMode === "canvas"
                 ? "bg-[#17102A] text-white shadow-xs"
                 : "bg-white text-[#17102A]/70 hover:bg-[#F5F1EA] border border-[#D9D2C5]"
             }`}
           >
-            Shot-by-Shot Cards (Lite)
+            WebP Canvas (Zero Lag)
+          </button>
+          <button
+            onClick={() => setViewMode("lite")}
+            className={`px-3 py-1.5 rounded text-xs font-mono transition-all cursor-pointer ${
+              viewMode === "lite"
+                ? "bg-[#17102A] text-white shadow-xs"
+                : "bg-white text-[#17102A]/70 hover:bg-[#F5F1EA] border border-[#D9D2C5]"
+            }`}
+          >
+            Cards (Lite)
           </button>
         </div>
       </div>
 
-      {!isLiteMode ? (
-        /* Video Scrubbing & Telemetry Player */
+      {viewMode !== "lite" ? (
+        /* Video or Canvas Scrubbing & Telemetry Player */
         <div className="space-y-6">
           <div className="relative rounded-2xl overflow-hidden border border-[#D9D2C5] bg-[#17102A] shadow-2xl">
-            {/* HTML5 Native Video Stream */}
+            {/* Native Video Stream or High-Speed Canvas Viewport */}
             <div className="relative aspect-video max-h-[580px] w-full bg-black flex items-center justify-center">
-              <video
-                ref={videoRef}
-                src="/videos/office-tour.mp4"
-                poster="/frames/clip1_reception.jpg"
-                playsInline
-                preload="metadata"
-                onLoadedMetadata={() => setVideoLoaded(true)}
-                onTimeUpdate={handleTimeUpdate}
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                className="w-full h-full object-contain"
-                onClick={handleTogglePlay}
-              />
+              {viewMode === "canvas" ? (
+                <canvas
+                  ref={canvasRef}
+                  width={1280}
+                  height={720}
+                  className="w-full h-full object-contain cursor-ew-resize"
+                  onClick={handleTogglePlay}
+                />
+              ) : (
+                <video
+                  ref={videoRef}
+                  src="/videos/office-tour.mp4"
+                  poster="/frames/clip1_reception.jpg"
+                  playsInline
+                  preload="metadata"
+                  onLoadedMetadata={() => setVideoLoaded(true)}
+                  onTimeUpdate={handleTimeUpdate}
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  className="w-full h-full object-contain"
+                  onClick={handleTogglePlay}
+                />
+              )}
 
               {/* Floating Clip Telemetry HUD */}
               <div className="absolute top-4 left-4 right-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pointer-events-none z-10">
                 <div className="bg-[#17102A]/85 backdrop-blur-md border border-white/20 rounded-lg px-3 py-1.5 text-white flex items-center gap-2.5">
                   <span className="w-2 h-2 rounded-full bg-[#1F7A8C] animate-ping" />
                   <span className="text-xs font-mono font-medium">
-                    SHOT 0{currentClip.clipNumber} // {currentClip.location.toUpperCase()}
+                    {viewMode === "canvas"
+                      ? `CANVAS WEBP // FRAME ${String(
+                          Math.min(263, Math.max(1, Math.round((currentTime / 43.8) * 262) + 1))
+                        ).padStart(4, "0")} OF 0263 // ZERO BUFFER LAG`
+                      : `SHOT 0${currentClip.clipNumber} // ${currentClip.location.toUpperCase()}`}
                   </span>
                 </div>
 
@@ -280,8 +330,8 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
                 </div>
               </div>
 
-              {/* Play / Pause Big Center Overlay (When Paused) */}
-              {!isPlaying && (
+              {/* Play / Pause Big Center Overlay (When Paused in Video Mode) */}
+              {viewMode === "video" && !isPlaying && (
                 <button
                   onClick={handleTogglePlay}
                   className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-[#6B3BA6]/90 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform cursor-pointer border border-white/30 z-10"
@@ -496,7 +546,7 @@ export function OfficeTourWalkthrough(): React.JSX.Element {
           <div className="p-4 rounded-lg bg-[#F5F1EA] border border-[#D9D2C5] flex items-center justify-between text-xs font-mono text-[#17102A]/70">
             <span>Viewing in Lite Mode for maximum battery &amp; frame rate efficiency.</span>
             <button
-              onClick={() => setIsLiteMode(false)}
+              onClick={() => setViewMode("video")}
               className="text-[#6B3BA6] underline hover:text-[#17102A] cursor-pointer"
             >
               Switch to Video Player
